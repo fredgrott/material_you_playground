@@ -1,0 +1,6 @@
+{
+  "appTitle": "navbar_adaptive",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
