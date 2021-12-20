@@ -12,3 +12,16 @@ import 'package:flutter/services.dart';
 
 Brightness? appBrightness =
     SchedulerBinding.instance?.window.platformBrightness;
+
+bool? appHighContrast =
+    SchedulerBinding.instance?.window.accessibilityFeatures.highContrast;
+
+bool appDark = isDark();
+
+bool isDark() {
+  if (appBrightness == Brightness.dark) {
+    return true;
+  } else {
+    return false;
+  }
+}
