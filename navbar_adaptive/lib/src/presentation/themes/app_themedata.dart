@@ -31,9 +31,64 @@
 //        are computed so no one should set them.
 //
 //       MD3 elevations are from 1-5 for neutral surfaces such as surfaces backgorunds etc.
+//
+//       These
+//        final Color primarySurfaceColor = isDark ? colorScheme.surface : colorScheme.primary;
+//      final Color onPrimarySurfaceColor = isDark ? colorScheme.onSurface : colorScheme.onPrimary;
+//        primaryColor = primarySurfaceColor;
+//      primaryColorBrightness = ThemeData.estimateBrightnessForColor(primarySurfaceColor);
+//      canvasColor ??= colorScheme.background;
+//      accentColor ??= colorScheme.secondary;
+//      accentColorBrightness ??= ThemeData.estimateBrightnessForColor(colorScheme.secondary);
+//      scaffoldBackgroundColor ??= colorScheme.background;
+//      bottomAppBarColor ??= colorScheme.surface;
+//      cardColor ??= colorScheme.surface;
+//      dividerColor ??= colorScheme.outline;
+//      backgroundColor ??= colorScheme.background;
+//      dialogBackgroundColor ??= colorScheme.background;
+//      indicatorColor ??= onPrimarySurfaceColor;
+//      errorColor ??= colorScheme.error;
+//      applyElevationOverlayColor ??= isDark;
+//
+//     Means that I do not set:
+//         primarySurfaceColor
+//         onPrimarySurfaceColor
+//        primaryColor
+//        primaryColorBrightness
+//        canvasColor
+//        accentColor
+//        accentColorBrightness
+//        scaffoldBackgroundColor
+//        bottomAppBarColor
+//        cardColor
+//        dividerColor
+//        backgroundColor
+//        dialogBackgroundColor
+//        indicatorColor
+//        errorColor
+//        appEvevationOverlayColor
+//       shdowColor
+//       toggleableActiveColor
+//      focusColor
+//      hoverColor
+//     selectedRowColor
+//     unslectedWidgetColor
+//     secondaryHeaderColor
+//     hintColor
+//     highlightColor
+//     disableColor
+//     splashColor
+
+
 
 import 'package:flutter/material.dart';
 import 'package:navbar_adaptive/src/infrastrucutre/app_vars.dart';
+import 'package:navbar_adaptive/src/presentation/themes/app_appbar_theme.dart';
+import 'package:navbar_adaptive/src/presentation/themes/app_drawer_themedata.dart';
+import 'package:navbar_adaptive/src/presentation/themes/app_icon_theme.dart';
+import 'package:navbar_adaptive/src/presentation/themes/app_listtile_themedata.dart';
+import 'package:navbar_adaptive/src/presentation/themes/app_navigationbar_themedata.dart';
+import 'package:navbar_adaptive/src/presentation/themes/app_navigationrail_themedata.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_scrollbar_themedata.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_text_theme.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
@@ -71,29 +126,21 @@ ThemeData appMaterialLightThemeData = ThemeData(
   scrollbarTheme: appMaterialLightScrollbarThemeData,
   colorScheme: appMaterialLightColorScheme,
 
-  //desktop
-  focusColor: appMaterialLightColorScheme.primaryContainer,
-  hoverColor: appMaterialLightColorScheme.secondaryContainer,
-  highlightColor: appMaterialLightColorScheme.secondary,
-  hintColor: appMaterialLightColorScheme.inversePrimary,
+  
+  
+  
+  
   // Keep in mind under MD3 we set nav bar shadows to transparency
-  shadowColor: appMaterialLightColorScheme.shadow,
+  
   // migration to MD3 by framework, hopefully gets rid of this at some time.
-  canvasColor: appMaterialLightColorScheme.surfaceVariant,
-  scaffoldBackgroundColor: appMaterialLightColorScheme.background,
+  
   // we do not have one with implemented adaptive nav patterns
   //bottomAppBarColor:
-  cardColor: appMaterialLightColorScheme.surfaceVariant,
-  dividerColor: appMaterialLightColorScheme.secondaryContainer,
-  splashColor: appMaterialLightColorScheme.inversePrimary,
-  selectedRowColor: Color(primaryLightOne),
-  unselectedWidgetColor: Color(primaryLightTwo),
-  disabledColor: appMaterialLightColorScheme.tertiaryContainer,
-  secondaryHeaderColor: appMaterialLightColorScheme.secondary,
-  backgroundColor: appMaterialLightColorScheme.background,
-  dialogBackgroundColor: appMaterialLightColorScheme.surfaceVariant,
-  indicatorColor: appMaterialLightColorScheme.primary,
-  errorColor: appMaterialLightColorScheme.error,
+  
+  
+  
+  
+  
   toggleableActiveColor: appMaterialLightColorScheme.primaryContainer,
   typography: appMaterialTypography,
 
@@ -106,6 +153,13 @@ ThemeData appMaterialLightThemeData = ThemeData(
 
   textTheme: appMateriaLightTextTheme,
   primaryTextTheme: appMaterialLightPrimaryTextTheme,
+  iconTheme: appMaterialLightIconThemeData,
+  primaryIconTheme: appMaterialLightPrimaryIconTheme,
+  appBarTheme: appMaterialLightAppBarTheme,
+  drawerTheme: appMaterialLightDrawerThemeData,
+  listTileTheme: appMaterialLightListTileThemeData,
+  navigationBarTheme: appMaterialLightNavigationBarThemeData,
+  navigationRailTheme: appMaterialLightNavigationRailThemeData,
 );
 
 ThemeData appMaterialDarkThemeData = ThemeData(
@@ -138,33 +192,22 @@ ThemeData appMaterialDarkThemeData = ThemeData(
   scrollbarTheme: appMaterialDarkScrollbarThemeData,
   colorScheme: appMaterialDarkColorScheme,
   //desktop
-  focusColor: appMaterialDarkColorScheme.primaryContainer,
-  hoverColor: appMaterialDarkColorScheme.secondaryContainer,
-  highlightColor: appMaterialDarkColorScheme.secondary,
-  hintColor: appMaterialDarkColorScheme.inversePrimary,
-  // Keep in mind under MD3 we set nav bar shadows to transparency
-  shadowColor: appMaterialDarkColorScheme.shadow,
-  // migration to MD3 by framework, hopefully gets rid of this at some time.
-  canvasColor: appMaterialDarkColorScheme.surfaceVariant,
-  scaffoldBackgroundColor: appMaterialDarkColorScheme.background,
-  // we do not have one with implemented adaptive nav patterns
-  //bottomAppBarColor:
-  cardColor: appMaterialDarkColorScheme.surfaceVariant,
-  dividerColor: appMaterialDarkColorScheme.secondaryContainer,
-  splashColor: appMaterialDarkColorScheme.inversePrimary,
-  selectedRowColor: Color(primaryDarkOne),
-  unselectedWidgetColor: Color(primaryDarkTwo),
-  disabledColor: appMaterialDarkColorScheme.tertiaryContainer,
-  secondaryHeaderColor: appMaterialDarkColorScheme.secondary,
-  backgroundColor: appMaterialDarkColorScheme.background,
-  dialogBackgroundColor: appMaterialDarkColorScheme.surfaceVariant,
-  indicatorColor: appMaterialDarkColorScheme.primary,
-  errorColor: appMaterialDarkColorScheme.error,
+  
+  
+  
+  
+  
   toggleableActiveColor: appMaterialDarkColorScheme.primaryContainer,
   typography: appMaterialTypography,
   textTheme: appMateriaDarkTextTheme,
   primaryTextTheme: appMaterialDarkPrimaryTextTheme,
-  
+  iconTheme: appMaterialDarkIconThemeData,
+  primaryIconTheme: appMaterialDarkPrimaryIconTheme,
+  appBarTheme: appMaterialDarkAppBarTheme,
+  drawerTheme: appMaterialDarkDrawerThemeData,
+  listTileTheme: appMaterialDarkListTileThemeData,
+  navigationBarTheme: appMaterialDarkNavigationBarThemeData,
+  navigationRailTheme: appMaterialDarkNavigationRailThemeData,
 );
 
 ThemeData cupertinoThemeData = ThemeData(
@@ -197,32 +240,21 @@ ThemeData cupertinoThemeData = ThemeData(
   scrollbarTheme: appCupertinoScrollbarThemeData,
   colorScheme: appCupertinoColorScheme,
   //desktop
-  focusColor: appCupertinoColorScheme.primaryContainer,
-  hoverColor: appCupertinoColorScheme.secondaryContainer,
-  highlightColor: appCupertinoColorScheme.secondary,
-  hintColor: appCupertinoColorScheme.inversePrimary,
-  // Keep in mind under MD3 we set nav bar shadows to transparency
-  shadowColor: appCupertinoColorScheme.shadow,
-  // migration to MD3 by framework, hopefully gets rid of this at some time.
-  canvasColor: appCupertinoColorScheme.surfaceVariant,
-  scaffoldBackgroundColor: appCupertinoColorScheme.background,
-  // we do not have one with implemented adaptive nav patterns
-  //bottomAppBarColor:
-  cardColor: appCupertinoColorScheme.surfaceVariant,
-  dividerColor: appCupertinoColorScheme.secondaryContainer,
-  splashColor: appCupertinoColorScheme.inversePrimary,
-  selectedRowColor: primaryCupertinoOne,
-  unselectedWidgetColor: primaryCupertinoTwo,
-  disabledColor: appCupertinoColorScheme.tertiaryContainer,
-  secondaryHeaderColor: appCupertinoColorScheme.secondary,
-  backgroundColor: appCupertinoColorScheme.background,
-  dialogBackgroundColor: appCupertinoColorScheme.surfaceVariant,
-  indicatorColor: appCupertinoColorScheme.primary,
-  errorColor: appCupertinoColorScheme.error,
+  
+  
+  
+  
   toggleableActiveColor: appCupertinoColorScheme.primaryContainer,
   typography: appMaterialTypography,
   textTheme: appCupertinoTextTheme,
   primaryTextTheme: appCupertinoPrimaryTextTheme,
+  iconTheme: appCupertinoIconThemeData,
+  primaryIconTheme: appCupertinoPrimaryIconTheme,
+  appBarTheme: appCupertinoAppBarTheme,
+  drawerTheme: appCupertinoDrawerThemeData,
+  listTileTheme: appCupertinoListTileThemeData,
+  navigationBarTheme: appCupertinoNavigationBarThemeData,
+  navigationRailTheme: appCupertinoNavigationRailThemeData,
 );
 
 MaterialBasedCupertinoThemeData materialBasedCupertinoThemeData =
