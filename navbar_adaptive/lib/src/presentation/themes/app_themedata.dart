@@ -20,64 +20,6 @@
 //              which can use UINamedThemeData.of(context) if
 //              that is at root of Widget Tree.
 //
-//         ThemeData brightness is just a getter ahd thus set to ColorScheme app
-//         brightness.
-//
-//            primaryColorBrightness ??=
-//                  estimateBrightnessForColor(primaryColor);
-//            accentColorBrightness ??=
-//               estimateBrightnessForColor(accentColor);
-//
-//        are computed so no one should set them.
-//
-//       MD3 elevations are from 1-5 for neutral surfaces such as surfaces backgorunds etc.
-//
-//       These
-//        final Color primarySurfaceColor = isDark ? colorScheme.surface : colorScheme.primary;
-//      final Color onPrimarySurfaceColor = isDark ? colorScheme.onSurface : colorScheme.onPrimary;
-//        primaryColor = primarySurfaceColor;
-//      primaryColorBrightness = ThemeData.estimateBrightnessForColor(primarySurfaceColor);
-//      canvasColor ??= colorScheme.background;
-//      accentColor ??= colorScheme.secondary;
-//      accentColorBrightness ??= ThemeData.estimateBrightnessForColor(colorScheme.secondary);
-//      scaffoldBackgroundColor ??= colorScheme.background;
-//      bottomAppBarColor ??= colorScheme.surface;
-//      cardColor ??= colorScheme.surface;
-//      dividerColor ??= colorScheme.outline;
-//      backgroundColor ??= colorScheme.background;
-//      dialogBackgroundColor ??= colorScheme.background;
-//      indicatorColor ??= onPrimarySurfaceColor;
-//      errorColor ??= colorScheme.error;
-//      applyElevationOverlayColor ??= isDark;
-//
-//     Means that I do not set:
-//         primarySurfaceColor
-//         onPrimarySurfaceColor
-//        primaryColor
-//        primaryColorBrightness
-//        canvasColor
-//        accentColor
-//        accentColorBrightness
-//        scaffoldBackgroundColor
-//        bottomAppBarColor
-//        cardColor
-//        dividerColor
-//        backgroundColor
-//        dialogBackgroundColor
-//        indicatorColor
-//        errorColor
-//        appEvevationOverlayColor
-//       shdowColor
-//       toggleableActiveColor
-//      focusColor
-//      hoverColor
-//     selectedRowColor
-//     unslectedWidgetColor
-//     secondaryHeaderColor
-//     hintColor
-//     highlightColor
-//     disableColor
-//     splashColor
 
 
 
@@ -92,7 +34,9 @@ import 'package:navbar_adaptive/src/presentation/themes/app_navigationrail_theme
 import 'package:navbar_adaptive/src/presentation/themes/app_scrollbar_themedata.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_text_theme.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
+import 'package:navbar_adaptive/src/presentation/themes/app_theme_data_defaults.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_typography.dart';
+import 'app_themedata_ext.dart';
 
 ThemeData appMaterialLightThemeData = ThemeData(
   applyElevationOverlayColor: true,
@@ -109,8 +53,9 @@ ThemeData appMaterialLightThemeData = ThemeData(
   // remember it also means more setup UI component wise to get
   //  colors right
   useMaterial3: true,
-
+  
   brightness: Brightness.light,
+  
 
   // we set this for the base-line app theme colors which uses the MCU package Scheme class
   // to set the ColorScheme. And we can go both ways; one can set this and then go with the
@@ -127,21 +72,36 @@ ThemeData appMaterialLightThemeData = ThemeData(
   colorScheme: appMaterialLightColorScheme,
 
   
+  highlightColor: appMaterialLightHighLightColor,
+  splashColor: appMaterialLightSplashColor,
+  primaryColor: appMaterialLightPrimaryColor,
+  canvasColor: appMaterialLightCanvasColor,
+  scaffoldBackgroundColor: appMaterialLightScaffoldBackgroundColor,
+  bottomAppBarColor: appMaterialLightBottomAppBarColor,
+  cardColor: appMaterialLightCardColor,
+  dividerColor: appMaterialLightDividerColor,
+  backgroundColor: appMaterialLightBackgroundColor,
+  dialogBackgroundColor: appMaterialLightDialogBackgroundColor,
+  indicatorColor: appMaterialLightIndicatorColor,
+  errorColor: appMaterialLightErrorColor,
+  focusColor: appMaterialLightFocusColor,
+  hoverColor: appMaterialLightHoverColor,
+  shadowColor: appMaterialLightShadowColor,
+  selectedRowColor: appMaterialLightSelectedRowColor,
+  unselectedWidgetColor: appMaterialLightUnselectedWidgetColor,
+  secondaryHeaderColor: appMaterialLightSecondaryHeaderColor,
+  hintColor: appMaterialLightHintColor,
+  disabledColor: appMaterialLightDisabledColor,
+  toggleableActiveColor: appMaterialLightToggleableActiveColor,
   
   
   
-  // Keep in mind under MD3 we set nav bar shadows to transparency
-  
-  // migration to MD3 by framework, hopefully gets rid of this at some time.
-  
-  // we do not have one with implemented adaptive nav patterns
-  //bottomAppBarColor:
   
   
   
   
   
-  toggleableActiveColor: appMaterialLightColorScheme.primaryContainer,
+  
   typography: appMaterialTypography,
 
   //All these are auto set black or white depending on dark mode
@@ -150,6 +110,8 @@ ThemeData appMaterialLightThemeData = ThemeData(
   // textTheme
   // primaryTextTheme
   // accenttextTheme
+
+  
 
   textTheme: appMateriaLightTextTheme,
   primaryTextTheme: appMaterialLightPrimaryTextTheme,
@@ -160,7 +122,22 @@ ThemeData appMaterialLightThemeData = ThemeData(
   listTileTheme: appMaterialLightListTileThemeData,
   navigationBarTheme: appMaterialLightNavigationBarThemeData,
   navigationRailTheme: appMaterialLightNavigationRailThemeData,
-);
+)..addThemeDataColorFields(
+    AppThemeColorFields(
+      appPrimaryOne: Color(primaryLightOne),
+      appOnPrimaryOne: Color(onPrimaryLightOne),
+      appPrimaryTwo: Color(primaryLightTwo),
+      appOnPrimaryTwo: Color(onPrimaryLightTwo),
+      appPrimaryThree: Color(primaryLightThree),
+      appOnPrimaryThree: Color(onPrimaryLightThree),
+      appPrimaryContainerOne: Color(primaryContainerLightOne),
+      appOnPrimaryContainerOne: Color(onPrimaryContainerLightOne),
+      appPrimaryContainerTwo: Color(primaryContainerLightTwo),
+      appOnPrimaryContainerTwo: Color(onPrimaryContainerLightTwo),
+      appPrimaryContainerThree: Color(primaryContainerLightThree),
+      appOnPrimaryContainerThree: Color(onPrimaryContainerLightThree),
+    ),
+  );
 
 ThemeData appMaterialDarkThemeData = ThemeData(
   applyElevationOverlayColor: true,
@@ -193,11 +170,31 @@ ThemeData appMaterialDarkThemeData = ThemeData(
   colorScheme: appMaterialDarkColorScheme,
   //desktop
   
+  highlightColor: appMaterialDarkHighLightColor,
+  splashColor: appMaterialDarkSplashColor,
+  primaryColor: appMaterialDarkPrimaryColor,
+  canvasColor: appMaterialDarkCanvasColor,
+  scaffoldBackgroundColor: appMaterialDarkScaffoldBackgroundColor,
+  bottomAppBarColor: appMaterialDarkBottomAppBarColor,
+  cardColor: appMaterialDarkCardColor,
+  dividerColor: appMaterialDarkDividerColor,
+  backgroundColor: appMaterialDarkBackgroundColor,
+  dialogBackgroundColor: appMaterialDarkDialogBackgroundColor,
+  indicatorColor: appMaterialDarkIndicatorColor,
+  errorColor: appMaterialDarkErrorColor,
+  focusColor: appMaterialDarkFocusColor,
+  hoverColor: appMaterialDarkHoverColor,
+  shadowColor: appMaterialDarkShadowColor,
+  selectedRowColor: appMaterialDarkSelectedRowColor,
+  unselectedWidgetColor: appMaterialDarkUnselectedWidgetColor,
+  secondaryHeaderColor: appMaterialDarkSecondaryHeaderColor,
+  hintColor: appMaterialDarkHintColor,
+  disabledColor: appMaterialDarkDisabledColor,
+  toggleableActiveColor: appMaterialDarkToggleableActiveColor,
   
   
   
   
-  toggleableActiveColor: appMaterialDarkColorScheme.primaryContainer,
   typography: appMaterialTypography,
   textTheme: appMateriaDarkTextTheme,
   primaryTextTheme: appMaterialDarkPrimaryTextTheme,
@@ -208,6 +205,21 @@ ThemeData appMaterialDarkThemeData = ThemeData(
   listTileTheme: appMaterialDarkListTileThemeData,
   navigationBarTheme: appMaterialDarkNavigationBarThemeData,
   navigationRailTheme: appMaterialDarkNavigationRailThemeData,
+)..addThemeDataColorFields(
+  AppThemeColorFields(
+    appPrimaryOne: Color(primaryDarkOne),
+    appOnPrimaryOne: Color(onPrimaryDarkOne),
+    appPrimaryTwo: Color(primaryDarkTwo),
+    appOnPrimaryTwo: Color(onPrimaryDarkTwo),
+    appPrimaryThree: Color(primaryDarkThree),
+    appOnPrimaryThree: Color(onPrimaryDarkThree),
+    appPrimaryContainerOne: Color(primaryContainerDarkOne),
+    appOnPrimaryContainerOne: Color(onPrimaryContainerDarkOne),
+    appPrimaryContainerTwo: Color(primaryContainerDarkTwo),
+    appOnPrimaryContainerTwo: Color(onPrimaryContainerDarkTwo),
+    appPrimaryContainerThree: Color(primaryContainerDarkThree),
+    appOnPrimaryContainerThree: Color(onPrimaryContainerDarkThree),
+  ),
 );
 
 ThemeData cupertinoThemeData = ThemeData(
@@ -242,9 +254,29 @@ ThemeData cupertinoThemeData = ThemeData(
   //desktop
   
   
+  highlightColor: appCupertinoHighLightColor,
+  splashColor: appCupertinoSplashColor,
+  primaryColor: appCupertinoPrimaryColor,
+  canvasColor: appCupertinoCanvasColor,
+  scaffoldBackgroundColor: appCupertinoScaffoldBackgroundColor,
+  bottomAppBarColor: appCupertinoBottomAppBarColor,
+  cardColor: appCupertinoCardColor,
+  dividerColor: appCupertinoDividerColor,
+  backgroundColor: appCupertinoBackgroundColor,
+  dialogBackgroundColor: appCupertinoDialogBackgroundColor,
+  indicatorColor: appCupertinoIndicatorColor,
+  errorColor: appCupertinoErrorColor,
+  focusColor: appCupertinoFocusColor,
+  hoverColor: appCupertinoHoverColor,
+  shadowColor: appCupertinoShadowColor,
+  selectedRowColor: appCupertinoSelectedRowColor,
+  unselectedWidgetColor: appCupertinoUnselectedWidgetColor,
+  secondaryHeaderColor: appCupertinoSecondaryHeaderColor,
+  hintColor: appCupertinoHintColor,
+  disabledColor: appCupertinoDisabledColor,
+  toggleableActiveColor: appCupertinoToggleableActiveColor,
   
   
-  toggleableActiveColor: appCupertinoColorScheme.primaryContainer,
   typography: appMaterialTypography,
   textTheme: appCupertinoTextTheme,
   primaryTextTheme: appCupertinoPrimaryTextTheme,
@@ -255,7 +287,22 @@ ThemeData cupertinoThemeData = ThemeData(
   listTileTheme: appCupertinoListTileThemeData,
   navigationBarTheme: appCupertinoNavigationBarThemeData,
   navigationRailTheme: appCupertinoNavigationRailThemeData,
-);
+)..addThemeDataColorFields(AppThemeColorFields(
+  appPrimaryOne: primaryCupertinoOne,
+  appOnPrimaryOne: onPrimaryCupertinoOne,
+  appPrimaryTwo: primaryCupertinoTwo,
+  appOnPrimaryTwo: onPrimaryCupertinoTwo,
+  appPrimaryThree: primaryCupertinoThree,
+  appOnPrimaryThree: onPrimaryCupertinoThree,
+  appPrimaryContainerOne: primaryContainerCupertinoOne,
+  appOnPrimaryContainerOne: onPrimaryContainerCupertinoOne,
+  appPrimaryContainerTwo: primaryContainerCupertinoTwo,
+  appOnPrimaryContainerTwo: onPrimaryContainerCupertinoTwo,
+  appPrimaryContainerThree: primaryContainerCupertinoThree,
+  appOnPrimaryContainerThree: onPrimaryContainerCupertinoThree,
+
+),);
 
 MaterialBasedCupertinoThemeData materialBasedCupertinoThemeData =
-    MaterialBasedCupertinoThemeData(materialTheme: cupertinoThemeData);
+    MaterialBasedCupertinoThemeData(
+      materialTheme: cupertinoThemeData,);
