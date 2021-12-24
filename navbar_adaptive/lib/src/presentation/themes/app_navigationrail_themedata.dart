@@ -5,6 +5,8 @@
 import 'package:flutter/material.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
 
+
+
 NavigationRailThemeData appMaterialLightNavigationRailThemeData =
     NavigationRailThemeData(
   backgroundColor: appMaterialLightColorScheme.background,
@@ -31,7 +33,7 @@ NavigationRailThemeData appMaterialDarkNavigationRailThemeData =
 
 NavigationRailThemeData appCupertinoNavigationRailThemeData =
     NavigationRailThemeData(
-  backgroundColor: appMaterialLightColorScheme.background,
+  backgroundColor: appCupertinoColorScheme.background,
   elevation: 4,
   labelType: NavigationRailLabelType.all,
   useIndicator: true,

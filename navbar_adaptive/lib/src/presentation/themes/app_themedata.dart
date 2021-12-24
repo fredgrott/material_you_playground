@@ -24,9 +24,10 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:navbar_adaptive/src/infrastrucutre/app_vars.dart';
+
 import 'package:navbar_adaptive/src/presentation/themes/app_appbar_theme.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_drawer_themedata.dart';
+import 'package:navbar_adaptive/src/presentation/themes/app_floating_action_button_themedata.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_icon_theme.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_listtile_themedata.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_navigationbar_themedata.dart';
@@ -35,6 +36,7 @@ import 'package:navbar_adaptive/src/presentation/themes/app_scrollbar_themedata.
 import 'package:navbar_adaptive/src/presentation/themes/app_text_theme.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_data_defaults.dart';
+
 import 'package:navbar_adaptive/src/presentation/themes/app_typography.dart';
 import 'app_themedata_ext.dart';
 
@@ -54,14 +56,10 @@ ThemeData appMaterialLightThemeData = ThemeData(
   //  colors right
   useMaterial3: true,
   
-  brightness: Brightness.light,
+  //brightness: Brightness.light,
   
 
-  // we set this for the base-line app theme colors which uses the MCU package Scheme class
-  // to set the ColorScheme. And we can go both ways; one can set this and then go with the
-  // default computed ColorScheme from Scheme that ColorScheme class sets or we can set our
-  // own and that would come in handy for those devices that do not have dynamic color.
-  colorSchemeSeed: appColorSeed,
+  
 
   // this is auto-set by target platform
   //pageTransitionsTheme:
@@ -122,6 +120,8 @@ ThemeData appMaterialLightThemeData = ThemeData(
   listTileTheme: appMaterialLightListTileThemeData,
   navigationBarTheme: appMaterialLightNavigationBarThemeData,
   navigationRailTheme: appMaterialLightNavigationRailThemeData,
+  floatingActionButtonTheme: appMaterialLightFloatingActionButtonThemeData,
+  
 )..addThemeDataColorFields(
     AppThemeColorFields(
       appPrimaryOne: Color(primaryLightOne),
@@ -155,20 +155,16 @@ ThemeData appMaterialDarkThemeData = ThemeData(
   //  colors right
   useMaterial3: true,
 
-  brightness: Brightness.dark,
+  //brightness: Brightness.dark,
+  colorScheme: appMaterialDarkColorScheme,
 
-  // we set this for the base-line app theme colors which uses the MCU package Scheme class
-  // to set the ColorScheme. And we can go both ways; one can set this and then go with the
-  // default computed ColorScheme from Scheme that ColorScheme class sets or we can set our
-  // own and that would come in handy for those devices that do not have dynamic color.
-  colorSchemeSeed: appColorSeed,
+  
   // this is auto-set by target platform
   //pageTransitionsTheme:
   // this is auto-set
   //platform:
   scrollbarTheme: appMaterialDarkScrollbarThemeData,
-  colorScheme: appMaterialDarkColorScheme,
-  //desktop
+  
   
   highlightColor: appMaterialDarkHighLightColor,
   splashColor: appMaterialDarkSplashColor,
@@ -205,6 +201,8 @@ ThemeData appMaterialDarkThemeData = ThemeData(
   listTileTheme: appMaterialDarkListTileThemeData,
   navigationBarTheme: appMaterialDarkNavigationBarThemeData,
   navigationRailTheme: appMaterialDarkNavigationRailThemeData,
+  floatingActionButtonTheme: appMaterialDarkFloatingActionButtonThemeData,
+  
 )..addThemeDataColorFields(
   AppThemeColorFields(
     appPrimaryOne: Color(primaryDarkOne),
@@ -238,20 +236,16 @@ ThemeData cupertinoThemeData = ThemeData(
   //  colors right
   useMaterial3: true,
 
-  brightness: appBrightness,
+  //brightness: appBrightness,
 
-  // we set this for the base-line app theme colors which uses the MCU package Scheme class
-  // to set the ColorScheme. And we can go both ways; one can set this and then go with the
-  // default computed ColorScheme from Scheme that ColorScheme class sets or we can set our
-  // own and that would come in handy for those devices that do not have dynamic color.
-  colorSchemeSeed: appColorSeed,
+  colorScheme: appCupertinoColorScheme,
+
+  
   // this is auto-set by target platform
   //pageTransitionsTheme:
   // this is auto-set
   //platform:
   scrollbarTheme: appCupertinoScrollbarThemeData,
-  colorScheme: appCupertinoColorScheme,
-  //desktop
   
   
   highlightColor: appCupertinoHighLightColor,
@@ -287,6 +281,8 @@ ThemeData cupertinoThemeData = ThemeData(
   listTileTheme: appCupertinoListTileThemeData,
   navigationBarTheme: appCupertinoNavigationBarThemeData,
   navigationRailTheme: appCupertinoNavigationRailThemeData,
+  floatingActionButtonTheme: appCupertinoFloatingActionButtonThemeData,
+  
 )..addThemeDataColorFields(AppThemeColorFields(
   appPrimaryOne: primaryCupertinoOne,
   appOnPrimaryOne: onPrimaryCupertinoOne,

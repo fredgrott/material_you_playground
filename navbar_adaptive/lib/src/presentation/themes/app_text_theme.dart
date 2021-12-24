@@ -4,6 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
+import 'package:navbar_adaptive/src/presentation/themes/app_themedata.dart';
+
 
 // Gist: on Light theme we need tertiary color and dark white color aan
 //       font family and style and weight deviaitons go here.

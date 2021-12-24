@@ -3,8 +3,10 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
+
+
+
 
 ScrollbarThemeData appMaterialLightScrollbarThemeData = ScrollbarThemeData(
   showTrackOnHover: true,
@@ -17,6 +19,7 @@ ScrollbarThemeData appMaterialLightScrollbarThemeData = ScrollbarThemeData(
   thickness: MaterialStateProperty.all(8),
   trackVisibility: MaterialStateProperty.all(true),
   thumbColor: MaterialStateProperty.all(appMaterialLightColorScheme.secondary),
+  
   trackColor: MaterialStateProperty.all(appMaterialLightColorScheme.secondaryContainer),
   trackBorderColor: MaterialStateProperty.all(appMaterialLightColorScheme.inversePrimary),
 );

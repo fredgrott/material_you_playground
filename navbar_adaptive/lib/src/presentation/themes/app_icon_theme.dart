@@ -5,18 +5,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
 
+
+
+
+// Gist: need to set adaptive sizes at the individual UI component as I need a context:
+//       size: getWindowType(context) == AdaptiveWindowType.lrge ? 34.0 : 24.0
+//
+//       And, my Brand Semantic Color harmonize with primary settings are done at the 
+//       UI component level in the screen.
+
 IconThemeData appMaterialLightIconThemeData = IconThemeData(
-  color: appMaterialLightColorScheme.primaryContainer,
+  color: appMaterialLightColorScheme.primary,
   size: 32,
 );
 
 IconThemeData appMaterialDarkIconThemeData = IconThemeData(
-  color: appMaterialDarkColorScheme.primaryContainer,
+  color: appMaterialDarkColorScheme.primary,
   size: 32,
 );
 
 IconThemeData appCupertinoIconThemeData = IconThemeData(
-  color: appCupertinoColorScheme.primaryContainer,
+  color: appCupertinoColorScheme.primary,
   size: 32,
 );
 

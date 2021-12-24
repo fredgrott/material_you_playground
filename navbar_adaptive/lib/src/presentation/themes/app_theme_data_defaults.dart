@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
 
+
+
 Color appMaterialLightHighLightColor = const Color(0x29000000);
 Color appMaterialLightSplashColor = const Color(0x1f000000);
 Color appMaterialDarkHighLightColor = const Color(0x29ffffff);

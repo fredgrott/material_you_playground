@@ -6,10 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_icon_theme.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
 
+
+
 AppBarTheme appMaterialLightAppBarTheme = AppBarTheme(
   // under MD3 it's not a full color fill and no shadows for
   // navbars
-  backgroundColor: appMaterialLightColorScheme.secondary.withOpacity(0.4),
+  backgroundColor: appMaterialLightColorScheme.secondaryContainer,
   elevation: 4,
   shadowColor: Colors.transparent,
   iconTheme: appMaterialLightIconThemeData,
@@ -21,7 +23,7 @@ AppBarTheme appMaterialLightAppBarTheme = AppBarTheme(
 AppBarTheme appMaterialDarkAppBarTheme = AppBarTheme(
   // under MD3 it's not a full color fill and no shadows for
   // navbars
-  backgroundColor: appMaterialDarkColorScheme.secondary.withOpacity(0.4),
+  backgroundColor: appMaterialDarkColorScheme.secondaryContainer,
   elevation: 4,
   shadowColor: Colors.transparent,
   iconTheme: appMaterialDarkIconThemeData,
@@ -33,7 +35,8 @@ AppBarTheme appMaterialDarkAppBarTheme = AppBarTheme(
 AppBarTheme appCupertinoAppBarTheme = AppBarTheme(
   // under MD3 it's not a full color fill and no shadows for
   // navbars
-  backgroundColor: appCupertinoColorScheme.secondary.withOpacity(0.4),
+  // per Apple HUI, need some opacity
+  backgroundColor: appCupertinoColorScheme.secondaryContainer.withOpacity(0.4),
   elevation: 4,
   shadowColor: Colors.transparent,
   iconTheme: appCupertinoIconThemeData,

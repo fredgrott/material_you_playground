@@ -5,6 +5,8 @@
 import 'package:flutter/material.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
 
+
+
 NavigationBarThemeData appMaterialLightNavigationBarThemeData =
     NavigationBarThemeData(
   backgroundColor: appMaterialLightColorScheme.background,
@@ -12,7 +14,7 @@ NavigationBarThemeData appMaterialLightNavigationBarThemeData =
   labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
   labelTextStyle: MaterialStateProperty.all(
     const TextStyle(
-      fontStyle: FontStyle.italic,
+      fontStyle: FontStyle.normal,
     ),
   ),
   iconTheme: MaterialStateProperty.resolveWith((states) {
@@ -35,7 +37,7 @@ NavigationBarThemeData appMaterialDarkNavigationBarThemeData =
   labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
   labelTextStyle: MaterialStateProperty.all(
     const TextStyle(
-      fontStyle: FontStyle.italic,
+      fontStyle: FontStyle.normal,
     ),
   ),
   iconTheme: MaterialStateProperty.resolveWith((states) {
@@ -58,7 +60,7 @@ NavigationBarThemeData appCupertinoNavigationBarThemeData =
   labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
   labelTextStyle: MaterialStateProperty.all(
     const TextStyle(
-      fontStyle: FontStyle.italic,
+      fontStyle: FontStyle.normal,
     ),
   ),
   iconTheme: MaterialStateProperty.resolveWith((states) {

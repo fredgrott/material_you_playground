@@ -5,28 +5,32 @@
 import 'package:flutter/material.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
 
+// Gist: temp fix until it's migrated to MD3 is to set icon and text 
+//        colors to inverseSurface
+
 ListTileThemeData appMaterialLightListTileThemeData = ListTileThemeData(
   dense: false,
   style: ListTileStyle.list,
   selectedColor: appMaterialLightColorScheme.secondary,
-  iconColor: appMaterialLightColorScheme.secondaryContainer,
-  textColor: appMaterialLightColorScheme.tertiaryContainer,
+  iconColor: appMaterialLightColorScheme.inverseSurface,
+  textColor: appMaterialLightColorScheme.inverseSurface,
   contentPadding: EdgeInsetsGeometry.infinity,
   tileColor: appMaterialLightColorScheme.surfaceVariant,
-  selectedTileColor: appMaterialLightColorScheme.inversePrimary,
+  selectedTileColor: appMaterialLightColorScheme.primary,
   minLeadingWidth: 4,
   enableFeedback: true,
+  
 );
 
 ListTileThemeData appMaterialDarkListTileThemeData = ListTileThemeData(
   dense: false,
   style: ListTileStyle.list,
   selectedColor: appMaterialDarkColorScheme.secondary,
-  iconColor: appMaterialDarkColorScheme.secondaryContainer,
-  textColor: appMaterialDarkColorScheme.tertiaryContainer,
+  iconColor: appMaterialDarkColorScheme.inverseSurface,
+  textColor: appMaterialDarkColorScheme.inverseSurface,
   contentPadding: EdgeInsetsGeometry.infinity,
   tileColor: appMaterialDarkColorScheme.surfaceVariant,
-  selectedTileColor: appMaterialDarkColorScheme.inversePrimary,
+  selectedTileColor: appMaterialDarkColorScheme.primary,
   minLeadingWidth: 4,
   enableFeedback: true,
 );
@@ -35,11 +39,11 @@ ListTileThemeData appCupertinoListTileThemeData = ListTileThemeData(
   dense: false,
   style: ListTileStyle.list,
   selectedColor: appCupertinoColorScheme.secondary,
-  iconColor: appCupertinoColorScheme.secondaryContainer,
-  textColor: appCupertinoColorScheme.tertiaryContainer,
+  iconColor: appCupertinoColorScheme.inverseSurface,
+  textColor: appCupertinoColorScheme.inverseSurface,
   contentPadding: EdgeInsetsGeometry.infinity,
   tileColor: appCupertinoColorScheme.surfaceVariant,
-  selectedTileColor: appCupertinoColorScheme.inversePrimary,
+  selectedTileColor: appCupertinoColorScheme.primary,
   minLeadingWidth: 4,
   enableFeedback: true,
 );

@@ -5,20 +5,31 @@
 import 'package:flutter/material.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_theme_colors.dart';
 
+// Note: bottom rounder corners show not the top
+
 DrawerThemeData appMaterialLightDrawerThemeData = DrawerThemeData(
-  backgroundColor: appMaterialLightColorScheme.surfaceVariant,
+  backgroundColor: appMaterialLightColorScheme.background,
   scrimColor: appMaterialLightColorScheme.secondaryContainer,
-  elevation: 4,
+  elevation: 0,
+  shape: const RoundedRectangleBorder(
+   borderRadius: BorderRadius.all(Radius.circular(18.0)),
+  ),
 );
 
 DrawerThemeData appMaterialDarkDrawerThemeData = DrawerThemeData(
-  backgroundColor: appMaterialDarkColorScheme.surfaceVariant,
+  backgroundColor: appMaterialDarkColorScheme.background,
   scrimColor: appMaterialDarkColorScheme.secondaryContainer,
-  elevation: 4,
+  elevation: 0,
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(18.0)),
+  ),
 );
 
 DrawerThemeData appCupertinoDrawerThemeData = DrawerThemeData(
-  backgroundColor: appCupertinoColorScheme.surfaceVariant,
+  backgroundColor: appCupertinoColorScheme.background,
   scrimColor: appCupertinoColorScheme.secondaryContainer,
-  elevation: 4,
+  elevation: 0,
+  shape: const RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(18.0)),
+  ),
 );
