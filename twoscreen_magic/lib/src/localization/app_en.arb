@@ -1,0 +1,6 @@
+{
+  "appTitle": "twoscreen_magic",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
