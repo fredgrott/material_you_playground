@@ -86,6 +86,18 @@ class AppCupertinoExtraFields {
   final Color? appInverseSurface;
   final Color? appOnInverseSurface;
   final Color? appInversePrimary;
+  final Color? appPrimaryOne;
+  final Color? appOnPrimaryOne;
+  final Color? appPrimaryContainerOne;
+  final Color? appOnPrimaryContainerOne;
+  final Color? appPrimaryTwo;
+  final Color? appOnPrimaryTwo;
+  final Color? appPrimaryContainerTwo;
+  final Color? appOnPrimaryContainerTwo;
+  final Color? appPrimaryThree;
+  final Color? appOnPrimaryThree;
+  final Color? appPrimaryContainerThree;
+  final Color? appOnPrimaryContainerThree;
   final TextStyle? appDisplayLarge;
   final TextStyle? appDisplayMedium;
   final TextStyle? appDisplaySmall;
@@ -130,6 +142,18 @@ class AppCupertinoExtraFields {
     Color? appInverseSurface,
     Color? appOnInverseSurface,
     Color? appInversePrimary,
+    Color? appPrimaryOne,
+    Color? appOnPrimaryOne,
+    Color? appPrimaryContainerOne,
+    Color? appOnPrimaryContainerOne,
+    Color? appPrimaryTwo,
+    Color? appOnPrimaryTwo,
+    Color? appPrimaryContainerTwo,
+    Color? appOnPrimaryContainerTwo,
+    Color? appPrimaryThree,
+    Color? appOnPrimaryThree,
+    Color? appPrimaryContainerThree,
+    Color? appOnPrimaryContainerThree,
     TextStyle? appDisplayLarge,
     TextStyle? appDisplayMedium,
     TextStyle? appDisplaySmall,
@@ -186,7 +210,19 @@ class AppCupertinoExtraFields {
         this.appBodySmall = appBodySmall,
         this.appLabelLarge = appLabelLarge,
         this.appLabelMedium = appLabelMedium,
-        this.appLabelSmall = appLabelSmall;
+        this.appLabelSmall = appLabelSmall,
+        this.appPrimaryOne = appPrimaryOne,
+        this.appOnPrimaryOne = appOnPrimaryOne,
+        this.appPrimaryContainerOne = appPrimaryContainerOne,
+        this.appOnPrimaryContainerOne = appOnPrimaryContainerOne,
+        this.appPrimaryTwo = appPrimaryTwo,
+        this.appOnPrimaryTwo = appOnPrimaryTwo,
+        this.appPrimaryContainerTwo = appPrimaryContainerTwo,
+        this.appOnPrimaryContainerTwo = appOnPrimaryContainerTwo,
+        this.appPrimaryThree = appPrimaryThree,
+        this.appOnPrimaryThree = appOnPrimaryThree,
+        this.appPrimaryContainerThree = appPrimaryContainerThree,
+        this.appOnPrimaryContainerThree = appOnPrimaryContainerThree;
 
   factory AppCupertinoExtraFields.empty() {
     return const AppCupertinoExtraFields();
@@ -223,9 +259,9 @@ extension AppColorThemeExt on ThemeData {
 // source docs, see: https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/cupertino/theme.dart
 // thus primaryColor will never be null and hence easy to grab.
 extension CupertinoColorThemeExt on MaterialBasedCupertinoThemeData {
-  static final Map<Color, AppThemeColorFields> _own = {};
+  static final Map<Color, AppCupertinoExtraFields> _own = {};
 
-  void addThemeDataColorFields(AppThemeColorFields own) {
+  void addThemeDataExtraFields(AppCupertinoExtraFields own) {
     // Theme.of() and thus platformThemeData builder ref wil be anew instance so I need to
     // use internal fields which are no deep copied but simply a reference is copied. That
     // also means that when I do use the Theme.of() refs that new instance will thus have my added fields.
@@ -236,12 +272,12 @@ extension CupertinoColorThemeExt on MaterialBasedCupertinoThemeData {
   }
 
   // ignore: avoid_init_to_null
-  static AppThemeColorFields? empty = null;
+  static AppCupertinoExtraFields? empty = null;
 
-  AppThemeColorFields? own() {
+  AppCupertinoExtraFields? own() {
     final o = _own[this.textTheme];
     if (o == null) {
-      empty ??= AppThemeColorFields.empty();
+      empty ??= AppCupertinoExtraFields.empty();
     }
 
     return o;

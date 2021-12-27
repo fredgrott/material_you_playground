@@ -24,6 +24,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:navbar_adaptive/src/infrastrucutre/app_vars.dart';
 
 import 'package:navbar_adaptive/src/presentation/themes/app_appbar_theme.dart';
 import 'package:navbar_adaptive/src/presentation/themes/app_drawer_themedata.dart';
@@ -220,85 +221,70 @@ ThemeData appMaterialDarkThemeData = ThemeData(
   ),
 );
 
-ThemeData cupertinoThemeData = ThemeData(
-  applyElevationOverlayColor: true,
-  // this would be set if we are using non-material themes for cupertino widgets.
-  //cupertinoOverrideTheme:
-  // this only gets set on the Cupertino Widget side as non-Apple devices use the
-  // material default. This is the Apple device settiong
-  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
 
-  // I set it this way to deal with all the variance in screen-sizes
-  visualDensity: VisualDensity.adaptivePlatformDensity,
 
-  // need this set as I am using the new Material design 3 widgets
-  // remember it also means more setup UI component wise to get
-  //  colors right
-  useMaterial3: true,
-
-  //brightness: appBrightness,
-
-  colorScheme: appCupertinoColorScheme,
-
-  
-  // this is auto-set by target platform
-  //pageTransitionsTheme:
-  // this is auto-set
-  //platform:
-  scrollbarTheme: appCupertinoScrollbarThemeData,
-  
-  
-  highlightColor: appCupertinoHighLightColor,
-  splashColor: appCupertinoSplashColor,
-  primaryColor: appCupertinoPrimaryColor,
-  canvasColor: appCupertinoCanvasColor,
-  scaffoldBackgroundColor: appCupertinoScaffoldBackgroundColor,
-  bottomAppBarColor: appCupertinoBottomAppBarColor,
-  cardColor: appCupertinoCardColor,
-  dividerColor: appCupertinoDividerColor,
-  backgroundColor: appCupertinoBackgroundColor,
-  dialogBackgroundColor: appCupertinoDialogBackgroundColor,
-  indicatorColor: appCupertinoIndicatorColor,
-  errorColor: appCupertinoErrorColor,
-  focusColor: appCupertinoFocusColor,
-  hoverColor: appCupertinoHoverColor,
-  shadowColor: appCupertinoShadowColor,
-  selectedRowColor: appCupertinoSelectedRowColor,
-  unselectedWidgetColor: appCupertinoUnselectedWidgetColor,
-  secondaryHeaderColor: appCupertinoSecondaryHeaderColor,
-  hintColor: appCupertinoHintColor,
-  disabledColor: appCupertinoDisabledColor,
-  toggleableActiveColor: appCupertinoToggleableActiveColor,
-  
-  
-  typography: appMaterialTypography,
-  textTheme: appCupertinoTextTheme,
-  primaryTextTheme: appCupertinoPrimaryTextTheme,
-  iconTheme: appCupertinoIconThemeData,
-  primaryIconTheme: appCupertinoPrimaryIconTheme,
-  appBarTheme: appCupertinoAppBarTheme,
-  drawerTheme: appCupertinoDrawerThemeData,
-  listTileTheme: appCupertinoListTileThemeData,
-  navigationBarTheme: appCupertinoNavigationBarThemeData,
-  navigationRailTheme: appCupertinoNavigationRailThemeData,
-  floatingActionButtonTheme: appCupertinoFloatingActionButtonThemeData,
-  
-)..addThemeDataColorFields(AppThemeColorFields(
-  appPrimaryOne: primaryCupertinoOne,
-  appOnPrimaryOne: onPrimaryCupertinoOne,
-  appPrimaryTwo: primaryCupertinoTwo,
-  appOnPrimaryTwo: onPrimaryCupertinoTwo,
-  appPrimaryThree: primaryCupertinoThree,
-  appOnPrimaryThree: onPrimaryCupertinoThree,
-  appPrimaryContainerOne: primaryContainerCupertinoOne,
-  appOnPrimaryContainerOne: onPrimaryContainerCupertinoOne,
-  appPrimaryContainerTwo: primaryContainerCupertinoTwo,
-  appOnPrimaryContainerTwo: onPrimaryContainerCupertinoTwo,
-  appPrimaryContainerThree: primaryContainerCupertinoThree,
-  appOnPrimaryContainerThree: onPrimaryContainerCupertinoThree,
-
-),);
-
+// we do not need to do extra themes here just supply the correct 
+// material one based on brightness of device
 MaterialBasedCupertinoThemeData materialBasedCupertinoThemeData =
     MaterialBasedCupertinoThemeData(
-      materialTheme: cupertinoThemeData,);
+      materialTheme: appBrightness == Brightness.light
+            ? appMaterialLightThemeData
+            : appMaterialDarkThemeData,)..addThemeDataExtraFields(AppCupertinoExtraFields(
+              appPrimary: appCupertinoColorScheme.primary,
+              appOnPrimary: appCupertinoColorScheme.onPrimary,
+              appPrimaryContainer: appCupertinoColorScheme.primaryContainer,
+              appOnPrimaryContainer: appCupertinoColorScheme.onPrimaryContainer,
+              appSecondary: appCupertinoColorScheme.secondary,
+              appOnSecondary: appCupertinoColorScheme.onSecondary,
+              appSecondaryContainer: appCupertinoColorScheme.secondaryContainer,
+              appOnSecondaryContainer: appCupertinoColorScheme.onSecondaryContainer,
+              appTertiary: appCupertinoColorScheme.tertiary,
+              appOnTertiary: appCupertinoColorScheme.onTertiary,
+              appTertiaryContainer: appCupertinoColorScheme.tertiaryContainer,
+              appOnTertiaryContainer: appCupertinoColorScheme.onTertiaryContainer,
+              appError: appCupertinoColorScheme.error,
+              appOnError: appCupertinoColorScheme.onError,
+              appErrorContainer: appCupertinoColorScheme.errorContainer,
+              appOnErrorContainer: appCupertinoColorScheme.onErrorContainer,
+              appBackground: appCupertinoColorScheme.background,
+              appOnBackground: appCupertinoColorScheme.onBackground,
+              appSurface: appCupertinoColorScheme.surface,
+              appOnSurface: appCupertinoColorScheme.onSurface,
+              appSurfaceVariant: appCupertinoColorScheme.surfaceVariant,
+              appOnSurfaceVariant: appCupertinoColorScheme.onSurfaceVariant,
+              appOutline: appCupertinoColorScheme.outline,
+              appShadow: appCupertinoColorScheme.shadow,
+              appInverseSurface: appCupertinoColorScheme.inverseSurface,
+              appOnInverseSurface: appCupertinoColorScheme.onInverseSurface,
+              appInversePrimary: appCupertinoColorScheme.inversePrimary,
+              appDisplayLarge: appCupertinoTextTheme.displayLarge,
+              appDisplayMedium: appCupertinoTextTheme.displayMedium,
+              appDisplaySmall: appCupertinoTextTheme.displaySmall,
+              appHeadlineLarge: appCupertinoTextTheme.headlineLarge,
+              appHeadlineMedium: appCupertinoTextTheme.headlineMedium,
+              appHeadlineSmall: appCupertinoTextTheme.headlineSmall,
+              appTitleLarge: appCupertinoTextTheme.titleLarge,
+              appTitleMedium: appCupertinoTextTheme.titleMedium,
+              appTitleSmall: appCupertinoTextTheme.titleSmall,
+              appBodyLarge: appCupertinoTextTheme.bodyLarge,
+              appBodyMedium: appCupertinoTextTheme.bodyMedium,
+              appBodySmall: appCupertinoTextTheme.bodySmall,
+              appLabelLarge: appCupertinoTextTheme.labelLarge,
+              appLabelMedium: appCupertinoTextTheme.labelMedium,
+              appLabelSmall: appCupertinoTextTheme.labelSmall,
+              appPrimaryOne: primaryCupertinoOne,
+              appOnPrimaryOne: onPrimaryCupertinoOne,
+              appPrimaryContainerOne: primaryContainerCupertinoOne,
+              appOnPrimaryContainerOne: onPrimaryContainerCupertinoOne,
+              appPrimaryTwo: primaryCupertinoTwo,
+              appOnPrimaryTwo: onPrimaryCupertinoTwo,
+              appPrimaryContainerTwo: primaryContainerCupertinoTwo,
+              appOnPrimaryContainerTwo: onPrimaryContainerCupertinoTwo,
+              appPrimaryThree: primaryCupertinoThree,
+              appOnPrimaryThree: onPrimaryCupertinoThree,
+              appPrimaryContainerThree: primaryContainerCupertinoThree,
+              appOnPrimaryContainerThree: onPrimaryContainerCupertinoThree,
+
+
+
+            ),);

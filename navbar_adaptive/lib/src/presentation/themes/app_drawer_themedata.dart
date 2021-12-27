@@ -25,11 +25,3 @@ DrawerThemeData appMaterialDarkDrawerThemeData = DrawerThemeData(
   ),
 );
 
-DrawerThemeData appCupertinoDrawerThemeData = DrawerThemeData(
-  backgroundColor: appCupertinoColorScheme.background,
-  scrimColor: appCupertinoColorScheme.secondaryContainer,
-  elevation: 0,
-  shape: const RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(18.0)),
-  ),
-);

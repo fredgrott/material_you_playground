@@ -24,10 +24,6 @@ IconThemeData appMaterialDarkIconThemeData = IconThemeData(
   size: 32,
 );
 
-IconThemeData appCupertinoIconThemeData = IconThemeData(
-  color: appCupertinoColorScheme.primary,
-  size: 32,
-);
 
 IconThemeData appMaterialLightPrimaryIconTheme = IconThemeData(
   color: appMaterialLightColorScheme.primary,
@@ -39,7 +35,3 @@ IconThemeData appMaterialDarkPrimaryIconTheme = IconThemeData(
   size: 32,
 );
 
-IconThemeData appCupertinoPrimaryIconTheme = IconThemeData(
-  color: appCupertinoColorScheme.primary,
-  size: 32,
-);

@@ -32,15 +32,3 @@ AppBarTheme appMaterialDarkAppBarTheme = AppBarTheme(
   titleTextStyle: const TextStyle(fontWeight: FontWeight.bold),
 );
 
-AppBarTheme appCupertinoAppBarTheme = AppBarTheme(
-  // under MD3 it's not a full color fill and no shadows for
-  // navbars
-  // per Apple HUI, need some opacity
-  backgroundColor: appCupertinoColorScheme.secondaryContainer.withOpacity(0.4),
-  elevation: 4,
-  shadowColor: Colors.transparent,
-  iconTheme: appCupertinoIconThemeData,
-  actionsIconTheme: appCupertinoIconThemeData,
-  centerTitle: true,
-  titleTextStyle: const TextStyle(fontWeight: FontWeight.bold),
-);

@@ -41,19 +41,3 @@ ScrollbarThemeData appMaterialDarkScrollbarThemeData = ScrollbarThemeData(
       MaterialStateProperty.all(appMaterialDarkColorScheme.inversePrimary),
 );
 
-ScrollbarThemeData appCupertinoScrollbarThemeData = ScrollbarThemeData(
-  showTrackOnHover: true,
-  isAlwaysShown: false,
-  radius: const Radius.circular(8),
-  interactive: true,
-  minThumbLength: 8,
-  mainAxisMargin: 8,
-  crossAxisMargin: 8,
-  thickness: MaterialStateProperty.all(8),
-  trackVisibility: MaterialStateProperty.all(true),
-  thumbColor: MaterialStateProperty.all(appCupertinoColorScheme.secondary),
-  trackColor:
-      MaterialStateProperty.all(appCupertinoColorScheme.secondaryContainer),
-  trackBorderColor:
-      MaterialStateProperty.all(appCupertinoColorScheme.inversePrimary),
-);

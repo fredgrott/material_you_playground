@@ -53,28 +53,7 @@ NavigationBarThemeData appMaterialDarkNavigationBarThemeData =
   }),
 );
 
-NavigationBarThemeData appCupertinoNavigationBarThemeData =
-    NavigationBarThemeData(
-  backgroundColor: appCupertinoColorScheme.background,
-  indicatorColor: appCupertinoColorScheme.primaryContainer,
-  labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-  labelTextStyle: MaterialStateProperty.all(
-    const TextStyle(
-      fontStyle: FontStyle.normal,
-    ),
-  ),
-  iconTheme: MaterialStateProperty.resolveWith((states) {
-    if (states.contains(MaterialState.pressed)) {
-      return appCupertinoNavbarIconPressed;
-    }
-    if (states.contains(MaterialState.focused)) {
-      return appCupertinoNavbarIconFocused;
-    }
-    if (states.contains(MaterialState.hovered)) {
-      return appCupertinoNavbarIconHovered;
-    }
-  }),
-);
+
 
 IconThemeData appMaterialLightNavbarIconPressed = IconThemeData(
   color: appMaterialLightColorScheme.secondaryContainer,
@@ -100,14 +79,3 @@ IconThemeData appMaterialDarkNavbarIconHovered = IconThemeData(
   color: appMaterialDarkColorScheme.primaryContainer,
 );
 
-IconThemeData appCupertinoNavbarIconPressed = IconThemeData(
-  color: appCupertinoColorScheme.secondaryContainer,
-);
-
-IconThemeData appCupertinoNavbarIconFocused = IconThemeData(
-  color: appCupertinoColorScheme.inversePrimary,
-);
-
-IconThemeData appCupertinoNavbarIconHovered = IconThemeData(
-  color: appCupertinoColorScheme.primaryContainer,
-);

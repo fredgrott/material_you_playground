@@ -35,15 +35,3 @@ ListTileThemeData appMaterialDarkListTileThemeData = ListTileThemeData(
   enableFeedback: true,
 );
 
-ListTileThemeData appCupertinoListTileThemeData = ListTileThemeData(
-  dense: false,
-  style: ListTileStyle.list,
-  selectedColor: appCupertinoColorScheme.secondary,
-  iconColor: appCupertinoColorScheme.inverseSurface,
-  textColor: appCupertinoColorScheme.inverseSurface,
-  contentPadding: EdgeInsetsGeometry.infinity,
-  tileColor: appCupertinoColorScheme.surfaceVariant,
-  selectedTileColor: appCupertinoColorScheme.primary,
-  minLeadingWidth: 4,
-  enableFeedback: true,
-);

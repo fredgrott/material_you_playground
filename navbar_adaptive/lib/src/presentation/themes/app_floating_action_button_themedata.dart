@@ -37,18 +37,3 @@ FloatingActionButtonThemeData appMaterialDarkFloatingActionButtonThemeData =
   enableFeedback: true,
 );
 
-FloatingActionButtonThemeData appCupertinoFloatingActionButtonThemeData =
-    FloatingActionButtonThemeData(
-  foregroundColor: appCupertinoColorScheme.primaryContainer,
-  backgroundColor: appCupertinoColorScheme.primary,
-  focusColor: appCupertinoFocusColor,
-  hoverColor: appCupertinoHoverColor,
-  splashColor: appCupertinoSplashColor,
-  elevation: 4,
-  focusElevation: 10,
-  hoverElevation: 6,
-  disabledElevation: 0,
-  highlightElevation: 14,
-  enableFeedback: true,
-);
-

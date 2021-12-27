@@ -31,17 +31,7 @@ NavigationRailThemeData appMaterialDarkNavigationRailThemeData =
   unselectedIconTheme: appMaterialDarkUnselectedIconThemeData,
 );
 
-NavigationRailThemeData appCupertinoNavigationRailThemeData =
-    NavigationRailThemeData(
-  backgroundColor: appCupertinoColorScheme.background,
-  elevation: 4,
-  labelType: NavigationRailLabelType.all,
-  useIndicator: true,
-  unselectedLabelTextStyle: appCupertinoUnselectedTextStyle,
-  selectedLabelTextStyle: appCupertinoSelectedTextStyle,
-  selectedIconTheme: appCupertinoSelectedIconThemeData,
-  unselectedIconTheme: appCupertinoUnselectedIconThemeData,
-);
+
 
 TextStyle appMaterialLightUnselectedTextStyle = TextStyle(
   color: appMaterialLightColorScheme.inverseSurface,
@@ -63,9 +53,7 @@ TextStyle appMaterialDarkSelectedTextStyle = TextStyle(
   color: appMaterialDarkColorScheme.primaryContainer,
 );
 
-TextStyle appCupertinoSelectedTextStyle = TextStyle(
-  color: appCupertinoColorScheme.primaryContainer,
-);
+
 
 IconThemeData appMaterialLightSelectedIconThemeData = IconThemeData(
   color: appMaterialLightColorScheme.primaryContainer,
@@ -75,9 +63,6 @@ IconThemeData appMaterialDarkSelectedIconThemeData = IconThemeData(
   color: appMaterialDarkColorScheme.primaryContainer,
 );
 
-IconThemeData appCupertinoSelectedIconThemeData = IconThemeData(
-  color: appCupertinoColorScheme.primaryContainer,
-);
 
 IconThemeData appMaterialLightUnselectedIconThemeData = IconThemeData(
   color: appMaterialLightColorScheme.inverseSurface,
@@ -87,6 +72,3 @@ IconThemeData appMaterialDarkUnselectedIconThemeData = IconThemeData(
   color: appMaterialDarkColorScheme.inverseSurface,
 );
 
-IconThemeData appCupertinoUnselectedIconThemeData = IconThemeData(
-  color: appCupertinoColorScheme.inverseSurface,
-);
