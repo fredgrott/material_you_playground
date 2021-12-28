@@ -1,0 +1,6 @@
+{
+  "appTitle": "adaptive_container",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

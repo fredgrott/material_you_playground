@@ -1,0 +1,6 @@
+{
+  "appTitle": "materialyou_dynamiccolor",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

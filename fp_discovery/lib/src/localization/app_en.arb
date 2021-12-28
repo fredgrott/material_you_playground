@@ -1,0 +1,6 @@
+{
+  "appTitle": "fp_discovery",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

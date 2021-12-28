@@ -1,0 +1,6 @@
+{
+  "appTitle": "staggered_animations",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
