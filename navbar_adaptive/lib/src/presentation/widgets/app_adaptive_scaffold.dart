@@ -248,6 +248,7 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
             NavigationDestination(
               icon: Icon(destination.icon),
               label: destination.title,
+              tooltip: destination.title,
             ),
         ],
         selectedIndex: selectedIndex,
