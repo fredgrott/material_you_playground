@@ -1,0 +1,6 @@
+{
+  "appTitle": "my_adaptive_col",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

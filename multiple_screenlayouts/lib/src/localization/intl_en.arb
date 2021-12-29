@@ -1,0 +1,6 @@
+{
+  "appTitle": "multiple_screenlayouts",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

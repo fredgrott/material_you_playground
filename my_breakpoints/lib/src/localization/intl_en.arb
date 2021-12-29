@@ -1,0 +1,6 @@
+{
+  "appTitle": "my_breakpoints",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
