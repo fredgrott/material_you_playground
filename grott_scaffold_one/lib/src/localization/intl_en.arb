@@ -1,0 +1,6 @@
+{
+  "appTitle": "grott_scaffold_one",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
