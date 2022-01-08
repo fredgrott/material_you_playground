@@ -25,33 +25,34 @@
 // ThemeData and have to set theme for cards by card.
 
 import 'package:flutter/material.dart';
-import 'package:grott_scaffold_one/src/infrastrucutre/app_vars.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_appbar_theme.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_banner_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_bottomsheet_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_button_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_card_theme.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_chip_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_dialog_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_divider_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_drawer_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_elevatedbutton_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_floating_action_button_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_icon_theme.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_listtile_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_navigationbar_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_navigationrail_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_outlinedbutton_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_scrollbar_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_slider_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_snackbar_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_tabbar_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_text_theme.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_textbutton_themedata.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_theme_colors.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_theme_data_defaults.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_typography.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/splash/wave_splash.dart';
+import 'package:modal_demo/src/infrastrucutre/app_vars.dart';
+import 'package:modal_demo/src/presentation/themes/app_appbar_theme.dart';
+import 'package:modal_demo/src/presentation/themes/app_banner_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_bottomsheet_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_button_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_card_theme.dart';
+import 'package:modal_demo/src/presentation/themes/app_chip_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_dialog_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_divider_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_drawer_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_elevatedbutton_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_floating_action_button_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_icon_theme.dart';
+import 'package:modal_demo/src/presentation/themes/app_listtile_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_navigationbar_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_navigationrail_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_outlinedbutton_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_scrollbar_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_slider_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_snackbar_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_tabbar_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_text_theme.dart';
+import 'package:modal_demo/src/presentation/themes/app_textbutton_themedata.dart';
+import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
+import 'package:modal_demo/src/presentation/themes/app_theme_data_defaults.dart';
+import 'package:modal_demo/src/presentation/themes/app_typography.dart';
+import 'package:modal_demo/src/presentation/themes/splash/wave_splash.dart';
+
 
 
 

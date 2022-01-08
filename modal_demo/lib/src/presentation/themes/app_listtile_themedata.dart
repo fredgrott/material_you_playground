@@ -3,9 +3,9 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_squircle.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_theme_colors.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_theme_data_defaults.dart';
+import 'package:modal_demo/src/presentation/themes/app_squircle.dart';
+import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
+import 'package:modal_demo/src/presentation/themes/app_theme_data_defaults.dart';
 
 // Gist: temp fix until it's migrated to MD3 is to set icon and text
 //        colors to inverseSurface

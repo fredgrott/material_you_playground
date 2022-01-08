@@ -4,11 +4,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:grott_scaffold_one/src/presentation/features/home/all_destinations.dart';
+import 'package:modal_demo/src/presentation/features/home/all_destinations.dart';
 
-import 'package:grott_scaffold_one/src/presentation/themes/app_themedata_ext.dart';
-import 'package:grott_scaffold_one/src/presentation/widgets/app_adaptive_appbar.dart';
-import 'package:grott_scaffold_one/src/presentation/widgets/app_adaptive_scaffold.dart';
+
+import 'package:modal_demo/src/presentation/themes/app_themedata_ext.dart';
+import 'package:modal_demo/src/presentation/widgets/app_adaptive_appbar.dart';
+import 'package:modal_demo/src/presentation/widgets/app_adaptive_scaffold.dart';
+
 
 class DefaultScaffoldDemo extends StatefulWidget {
   const DefaultScaffoldDemo({Key? key}) : super(key: key);
@@ -83,5 +85,4 @@ class _DefaultScaffoldDemoState extends State<DefaultScaffoldDemo> {
     );
   }
 }
-
 

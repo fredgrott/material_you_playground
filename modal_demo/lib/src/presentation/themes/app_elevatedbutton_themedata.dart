@@ -5,9 +5,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_squircle.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_theme_colors.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_theme_data_defaults.dart';
+import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
+import 'package:modal_demo/src/presentation/themes/app_theme_data_defaults.dart';
+
 
 // Gist: MD3 Spec for Buttons is at:
 //       https://m3.material.io/components/buttons/specs

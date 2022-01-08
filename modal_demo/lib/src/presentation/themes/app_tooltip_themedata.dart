@@ -3,7 +3,8 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_theme_colors.dart';
+import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
+
 
 TooltipThemeData appMaterialLightToolTipThemeData = TooltipThemeData(
   height: 32,

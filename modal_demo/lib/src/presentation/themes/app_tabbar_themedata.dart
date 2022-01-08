@@ -4,7 +4,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_theme_colors.dart';
+import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
+
 
 TabBarTheme appMaterialLightTabBarTheme = TabBarTheme(
   indicatorSize: TabBarIndicatorSize.label,

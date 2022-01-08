@@ -3,7 +3,8 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:grott_scaffold_one/src/presentation/themes/app_theme_colors.dart';
+import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
+
 
 // Under MD3 Widgets have a 28dp rounded corners
 double widgetRadius = 28.0;

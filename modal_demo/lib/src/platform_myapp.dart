@@ -6,15 +6,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-
-import 'package:grott_scaffold_one/src/infrastrucutre/app_vars.dart';
-import 'package:grott_scaffold_one/src/infrastrucutre/app_widget_keys.dart';
-
+import 'package:modal_demo/src/infrastrucutre/app_vars.dart';
+import 'package:modal_demo/src/infrastrucutre/app_widget_keys.dart';
 
 
 
-import 'package:grott_scaffold_one/src/localization_gen/l10n.dart';
-import 'package:grott_scaffold_one/src/presentation/features/home/default_scaffold_demo.dart';
+
+
+import 'package:modal_demo/src/localization_gen/l10n.dart';
+import 'package:modal_demo/src/presentation/features/home/default_scaffold_demo.dart';
 
 
 

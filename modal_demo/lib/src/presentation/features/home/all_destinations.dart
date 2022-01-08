@@ -3,7 +3,8 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:grott_scaffold_one/src/presentation/widgets/app_adaptive_scaffold.dart';
+import 'package:modal_demo/src/presentation/widgets/app_adaptive_scaffold.dart';
+
 
 const allDestinations = [
   AdaptiveScaffoldDestination(
