@@ -1,0 +1,6 @@
+{
+  "appTitle": "collection_widgets",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
