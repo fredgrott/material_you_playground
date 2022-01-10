@@ -39,13 +39,7 @@ class _DefaultScaffoldDemoState extends State<DefaultScaffoldDemo> {
       //onDestinationSelected: ,
 
       drawerHeader: DrawerHeader(
-        child: Text(
-          'Brand Header',
-          style: platformThemeData(
-            context, 
-            material: (data) => data.textTheme.labelLarge, 
-            cupertino: (data) => data.ownText()?.appLabelLarge,
-            ),),),
+        child: Image.asset('assets/images/grott_studios.png'),),
       sideSheetBody: const StandardSideSheet(),
       selectedIndex: 0,
       destinations: allDestinations.sublist(

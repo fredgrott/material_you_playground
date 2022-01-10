@@ -194,7 +194,7 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
       case NavigationType.drawer:
         return _buildNavigationDrawerScaffold();
       case NavigationType.permanentDrawer:
-        return _buildPermanentDrawerScaffold(context);
+        return _buildPermanentDrawerScaffold();
     }
   }
 
@@ -385,8 +385,9 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
 
   // standard side sheet goes here as last item of the row
   // ignore: long-method
-  Widget _buildPermanentDrawerScaffold(BuildContext context) {
+  Widget _buildPermanentDrawerScaffold() {
     return Row(
+      
       children: [
         Drawer(
           child: Column(
@@ -403,6 +404,8 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
             ],
           ),
         ),
+
+        
         const VerticalDivider(
           width: 1,
           thickness: 1,

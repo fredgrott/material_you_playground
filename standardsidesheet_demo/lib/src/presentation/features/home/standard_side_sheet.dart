@@ -11,14 +11,20 @@ class StandardSideSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        "Just some side content, Nothing to see here. Nothing to do here.",
-        style: platformThemeData(
-          context, 
-          material: (data) => data.textTheme.bodyMedium, 
-          cupertino: (data) => data.ownText()?.appBodyMedium,
-          ),),
+    return Padding(
+      padding: EdgeInsets.all(8),
+      child: Center(
+        child: Text(
+          "Just some side content, Nothing to see here. Nothing to do here.",
+          style: platformThemeData(
+            context,
+            material: (data) => data.textTheme.bodyMedium,
+            cupertino: (data) => data.ownText()?.appBodyMedium,
+          ),
+        ),
+      ),
     );
+
+    
   }
 }
