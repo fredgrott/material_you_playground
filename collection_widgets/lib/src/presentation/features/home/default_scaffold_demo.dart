@@ -4,6 +4,7 @@
 
 import 'package:collection_widgets/src/data/sample_item.dart';
 import 'package:collection_widgets/src/presentation/features/home/all_destinations.dart';
+import 'package:collection_widgets/src/presentation/features/home/standard_side_sheet.dart';
 import 'package:collection_widgets/src/presentation/themes/app_themedata_ext.dart';
 import 'package:collection_widgets/src/presentation/widgets/app_adaptive_appbar.dart';
 import 'package:collection_widgets/src/presentation/widgets/app_adaptive_scaffold.dart';
@@ -20,11 +21,12 @@ class DefaultScaffoldDemo extends StatefulWidget {
 class _DefaultScaffoldDemoState extends State<DefaultScaffoldDemo> {
   bool showDiscovery = false;
   int count = 0;
-  final List<SampleItem> items = [
-    const SampleItem(1),
-    const SampleItem(2),
-    const SampleItem(3),
+  final List<SampleItem> items = const [
+    SampleItem(1),
+    SampleItem(2),
+    SampleItem(3),
   ];
+
   final int _destinationCount = 5;
   final bool _fabInRail = false;
   final bool _includeBaseDestinationsInMenu = true;
@@ -42,6 +44,21 @@ class _DefaultScaffoldDemoState extends State<DefaultScaffoldDemo> {
       // })
       // }
       //onDestinationSelected: ,
+
+      drawerHeader: DrawerHeader(
+        // ignore: use_named_constants
+        margin: const EdgeInsets.all(0.0),
+
+        // ignore: use_named_constants
+        padding: const EdgeInsets.fromLTRB(
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+        ),
+        child: Image.asset('assets/images/grott_studios.png'),
+      ),
+      sideSheetBody: const StandardSideSheet(),
       selectedIndex: 0,
       destinations: allDestinations.sublist(
         0,
@@ -62,44 +79,40 @@ class _DefaultScaffoldDemoState extends State<DefaultScaffoldDemo> {
 
   // ignore: long-method
   Widget _body() {
-    // Gist: ListView builder is already a scollable list of things. To get
-    //       look need list tile as card
-    return ListView.builder(
-      restorationId: 'sampleItemListView',
-      itemCount: items.length,
-      itemBuilder: (
-        BuildContext context,
-        int index,
-      ) {
-        final item = items[index];
+    return Card(
+      color: platformThemeData(
+        context, 
+        material: (data) => data.colorScheme.secondaryContainer, 
+        cupertino: (data) => data.ownColor()?.appSecondaryContainer,
+        ),
+      child: ListView.builder(
+        restorationId: 'sampleItemListView',
+        itemBuilder: (
+          BuildContext context,
+          int index,
+        ) {
+          final item = items[index];
 
-        return ListTile(
-            title: Text(
-              'SampleItem ${item.id}',
-              style: platformThemeData(
-                context,
-                material: (data) => data.textTheme.labelLarge,
-                cupertino: (data) => data.ownText()?.appLabelLarge,
+          return Card(
+            child: ListTile(
+              title: Text(
+                'SampleItem ${item.id}',
+                style: platformThemeData(
+                  context,
+                  material: (data) => data.textTheme.labelLarge,
+                  cupertino: (data) => data.ownText()?.appLabelLarge,
+                ),
               ),
-            ),
-            subtitle: Text(
-              'listed by FG',
-              style: platformThemeData(
-                context,
-                material: (data) => data.textTheme.labelMedium,
-                cupertino: (data) => data.ownText()?.appLabelMedium,
+              leading: const CircleAvatar(
+                // Display the Flutter Logo image asset.
+                foregroundImage: AssetImage('assets/images/flutter_logo.png'),
               ),
+              onTap: () {},
             ),
-            leading: const CircleAvatar(
-              // Display the Flutter Logo image asset.
-              foregroundImage: AssetImage('assets/images/flutter_logo.png'),
-            ),
-            onTap: () {},
-        
-        );
-      },
+          );
+        },
+        itemCount: items.length,
+      ),
     );
-
-    
   }
 }

@@ -17,9 +17,9 @@ ListTileThemeData appMaterialLightListTileThemeData = ListTileThemeData(
   selectedColor: appMaterialLightColorScheme.secondary,
   iconColor: appMaterialLightColorScheme.inverseSurface,
   textColor: appMaterialLightColorScheme.inverseSurface,
-  contentPadding: EdgeInsetsGeometry.infinity,
+  contentPadding: const EdgeInsets.all(8),
   tileColor: appMaterialLightColorScheme.surfaceVariant,
-  selectedTileColor: appMaterialLightColorScheme.primary,
+  selectedTileColor: appMaterialLightColorScheme.primary.withOpacity(0.28),
   minLeadingWidth: 4,
   enableFeedback: true,
   shape: SquircleBorder(
@@ -35,9 +35,9 @@ ListTileThemeData appMaterialDarkListTileThemeData = ListTileThemeData(
   selectedColor: appMaterialDarkColorScheme.secondary,
   iconColor: appMaterialDarkColorScheme.inverseSurface,
   textColor: appMaterialDarkColorScheme.inverseSurface,
-  contentPadding: EdgeInsetsGeometry.infinity,
+  contentPadding: const EdgeInsets.all(8),
   tileColor: appMaterialDarkColorScheme.surfaceVariant,
-  selectedTileColor: appMaterialDarkColorScheme.primary,
+  selectedTileColor: appMaterialDarkColorScheme.primary.withOpacity(0.28),
   minLeadingWidth: 4,
   enableFeedback: true,
   shape: SquircleBorder(

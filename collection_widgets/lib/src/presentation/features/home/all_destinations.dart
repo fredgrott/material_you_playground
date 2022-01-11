@@ -6,6 +6,7 @@ import 'package:collection_widgets/src/presentation/widgets/app_adaptive_scaffol
 import 'package:flutter/material.dart';
 
 
+
 const allDestinations = [
   AdaptiveScaffoldDestination(
     title: 'ALARM',

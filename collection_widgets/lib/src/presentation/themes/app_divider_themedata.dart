@@ -5,7 +5,6 @@
 import 'package:collection_widgets/src/presentation/themes/app_theme_colors.dart';
 import 'package:flutter/material.dart';
 
-
 DividerThemeData appMaterialLightDividerThemeData = DividerThemeData(
   color: appMaterialLightColorScheme.secondary,
   thickness: 4,

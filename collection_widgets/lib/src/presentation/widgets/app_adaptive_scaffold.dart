@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 //
-// Original By Material IO team under BSD license
+// Original By Material IO team under BSD clciense
 
 import 'dart:math' as math;
 
@@ -10,7 +10,6 @@ import 'package:adaptive_breakpoints/adaptive_breakpoints.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-
 
 typedef NavigationTypeResolver = NavigationType Function(BuildContext context);
 
@@ -43,20 +42,12 @@ class AdaptiveScaffoldDestination {
   });
 }
 
-
-
 // A widget that adapts to the current display size, displaying a [Drawer],
 /// [NavigationRail], or [BottomNavigationBar]. Navigation destinations are
 /// defined in the [destinations] parameter.
 class AdaptiveNavigationScaffold extends StatelessWidget {
-
-  
-
-
-
-
-
-
+  /// My modification to support standard side sheets on the right side on desktop
+  final Widget sideSheetBody;
 
   /// See [Scaffold.appBar].
   final PreferredSizeWidget? appBar;
@@ -132,8 +123,6 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
   /// values.
   final List<AdaptiveScaffoldDestination> destinations;
 
-  
-
   /// Called when one of the [destinations] is selected.
   ///
   /// The stateful widget that creates the adaptive scaffold needs to keep
@@ -182,12 +171,12 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
     this.endDrawerEnableOpenDragGesture = true,
     required this.selectedIndex,
     required this.destinations,
-    
     this.onDestinationSelected,
     this.navigationTypeResolver,
     this.drawerHeader,
     this.fabInRail = true,
     this.includeBaseDestinationsInMenu = true,
+    required this.sideSheetBody,
   }) : super(key: key);
 
   // ignore: member-ordering-extended
@@ -230,7 +219,6 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
               title: PlatformText(destinations[i].title),
               onTap: () {
                 onDestinationSelected?.call(i);
-                
               },
             ),
         ],
@@ -273,9 +261,7 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
             ),
         ],
         selectedIndex: selectedIndex,
-        onDestinationSelected: (int index) {
-          
-        },
+        onDestinationSelected: (int index) {},
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
       ),
       floatingActionButton: floatingActionButton,
@@ -319,9 +305,7 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
                 ),
             ],
             selectedIndex: selectedIndex,
-            onDestinationSelected: onDestinationSelected ?? (_) {
-              
-            },
+            onDestinationSelected: onDestinationSelected ?? (_) {},
           ),
           const VerticalDivider(
             width: 1,
@@ -398,8 +382,11 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
     );
   }
 
+  // standard side sheet goes here as last item of the row
+  // ignore: long-method
   Widget _buildPermanentDrawerScaffold() {
     return Row(
+      
       children: [
         Drawer(
           child: Column(
@@ -416,6 +403,8 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
             ],
           ),
         ),
+
+        
         const VerticalDivider(
           width: 1,
           thickness: 1,
@@ -444,6 +433,25 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
             endDrawerEnableOpenDragGesture: endDrawerEnableOpenDragGesture,
           ),
         ),
+        // standard side sheet, borrowed layout idead from modal side sheets package
+        //  https://github.com/lalitjarwal/modal_side_sheet/blob/master/lib/src/body_with_side_sheet.dart
+        //
+        // This is the left border of standard side sheet
+        const VerticalDivider(
+          width: 1,
+          thickness: 1,
+        ),
+        Drawer(
+          child: Column(
+            children: [
+              // TODO: Find a better way to write `drawerHeader!`
+              if (drawerHeader != null) drawerHeader!,
+              sideSheetBody,
+            ],
+          ),
+        ),
+
+        
       ],
     );
   }
@@ -452,10 +460,7 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
     final index = destinations.indexOf(destination);
     if (index != selectedIndex) {
       onDestinationSelected?.call(index);
-     
-    } else{
-      
-    }
+    } else {}
   }
 }
 

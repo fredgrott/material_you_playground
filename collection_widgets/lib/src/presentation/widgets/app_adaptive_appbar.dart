@@ -3,13 +3,15 @@
 // license that can be found in the LICENSE file.
 //
 // Original By Material IO team under BSD license
-
+// Other modificatiosn from backdrop package by Harsh Bhikadia
+// under MIT license
 
 
 
 import 'package:adaptive_breakpoints/adaptive_breakpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 
 class AdaptiveAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
@@ -75,7 +77,6 @@ class AdaptiveAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       key: key,
-      // for backdrop features
       leading: leading,
       automaticallyImplyLeading: automaticallyImplyLeading,
       title: title,

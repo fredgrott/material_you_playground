@@ -7,6 +7,7 @@ import 'package:collection_widgets/src/presentation/themes/app_theme_colors.dart
 import 'package:collection_widgets/src/presentation/themes/app_theme_data_defaults.dart';
 import 'package:flutter/material.dart';
 
+
 BottomSheetThemeData appMaterialLightBottomSheetThemeData =
     BottomSheetThemeData(
       backgroundColor: appMaterialLightColorScheme.surfaceVariant,

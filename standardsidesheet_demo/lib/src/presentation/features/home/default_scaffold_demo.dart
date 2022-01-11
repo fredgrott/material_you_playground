@@ -39,6 +39,12 @@ class _DefaultScaffoldDemoState extends State<DefaultScaffoldDemo> {
       //onDestinationSelected: ,
 
       drawerHeader: DrawerHeader(
+        // ignore: use_named_constants
+        margin: const EdgeInsets.all(0.0),
+
+
+        // ignore: use_named_constants
+        padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0,),
         child: Image.asset('assets/images/grott_studios.png'),),
       sideSheetBody: const StandardSideSheet(),
       selectedIndex: 0,
