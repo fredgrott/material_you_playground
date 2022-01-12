@@ -2,10 +2,13 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+
 import 'package:flutter/material.dart';
-import 'package:modal_demo/src/presentation/themes/app_squircle.dart';
 import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
 import 'package:modal_demo/src/presentation/themes/app_theme_data_defaults.dart';
+
+import 'app_squircle.dart';
+
 
 
 
@@ -21,10 +24,10 @@ ButtonThemeData materialLightButtonThemeData = ButtonThemeData(
   minWidth: 88,
   // ignore: avoid_redundant_argument_values
   height: 36,
-  padding: EdgeInsetsGeometry.infinity,
+  padding: const EdgeInsets.all(8),
   shape: const SquircleBorder(
     radius: BorderRadius.all(
-      Radius.circular(8.0),
+      Radius.circular(20.0),
     ),
   ),
   buttonColor: appMaterialLightColorScheme.primary,
@@ -47,10 +50,10 @@ ButtonThemeData materialDarkButtonThemeData = ButtonThemeData(
   minWidth: 88,
   // ignore: avoid_redundant_argument_values
   height: 36,
-  padding: EdgeInsetsGeometry.infinity,
+  padding: const EdgeInsets.all(8),
   shape: const SquircleBorder(
     radius: BorderRadius.all(
-      Radius.circular(8.0),
+      Radius.circular(20.0),
     ),
   ),
   buttonColor: appMaterialDarkColorScheme.primary,

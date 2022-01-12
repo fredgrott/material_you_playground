@@ -4,6 +4,7 @@
 
 
 
+
 import 'package:flutter/material.dart';
 import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
 
@@ -27,6 +28,10 @@ ChipThemeData appMaterialLightChipThemeData = ChipThemeData(
   brightness: Brightness.light,
   elevation: 1,
   pressElevation: 2,
+  shape: RoundedRectangleBorder(
+    borderRadius: const BorderRadius.all(Radius.circular(8)),
+    side: appMaterialLightBorderSide,
+  ),
 );
 
 BorderSide appMaterialLightBorderSide = BorderSide(
@@ -44,5 +49,47 @@ TextStyle appMaterialLightChipLabelStyle = TextStyle(
 );
 
 TextStyle appMaterialLightChipSecondaryLabelStyle = TextStyle(
+  color: appMaterialLightColorScheme.onSurface,
+);
+
+BorderSide appMaterialDarkBorderSide = BorderSide(
+  color: appMaterialDarkColorScheme.outline,
+  // ignore: avoid_redundant_argument_values
+  width: 1,
+  // ignore: avoid_redundant_argument_values
+  style: BorderStyle.solid,
+);
+
+// LabelLarge
+TextStyle appMaterialDarkChipLabelStyle = TextStyle(
   color: appMaterialDarkColorScheme.onSurface,
+);
+
+TextStyle appMaterialDarkChipSecondaryLabelStyle = TextStyle(
+  color: appMaterialDarkColorScheme.onSurface,
+);
+
+ChipThemeData appMaterialDarkChipThemeData = ChipThemeData(
+  backgroundColor: appMaterialDarkColorScheme.surface,
+  deleteIconColor: appMaterialDarkColorScheme.inversePrimary,
+  disabledColor: appMaterialDarkColorScheme.onSurface,
+  selectedColor: appMaterialDarkColorScheme.secondary,
+  secondarySelectedColor: appMaterialDarkColorScheme.surfaceVariant,
+  shadowColor: appMaterialDarkColorScheme.shadow,
+  selectedShadowColor: appMaterialDarkColorScheme.shadow.withOpacity(0.5),
+  showCheckmark: true,
+  checkmarkColor: appMaterialDarkColorScheme.secondaryContainer,
+  labelPadding: const EdgeInsets.all(16),
+  padding: const EdgeInsets.all(16),
+  side: appMaterialDarkBorderSide,
+  //shape: ,
+  labelStyle: appMaterialDarkChipLabelStyle,
+  secondaryLabelStyle: appMaterialDarkChipSecondaryLabelStyle,
+  brightness: Brightness.light,
+  elevation: 1,
+  pressElevation: 2,
+  shape: RoundedRectangleBorder(
+    borderRadius: const BorderRadius.all(Radius.circular(8)),
+    side: appMaterialDarkBorderSide,
+  ),
 );

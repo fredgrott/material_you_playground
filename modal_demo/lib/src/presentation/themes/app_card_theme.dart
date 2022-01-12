@@ -2,10 +2,12 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+
 import 'package:flutter/material.dart';
 import 'package:modal_demo/src/presentation/themes/app_squircle.dart';
 import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
 import 'package:modal_demo/src/presentation/themes/app_theme_data_defaults.dart';
+
 
 
 
@@ -24,9 +26,9 @@ CardTheme appMaterialLightCardTheme = CardTheme(
   shadowColor: appMaterialLightColorScheme.shadow,
   elevation: 1,
   margin: const EdgeInsets.all(16),
-  shape: SquircleBorder(
+  shape: const SquircleBorder(
                radius: BorderRadius.all(
-                  Radius.circular(widgetRadius),
+                  Radius.circular(12),
              ),),
 
 );

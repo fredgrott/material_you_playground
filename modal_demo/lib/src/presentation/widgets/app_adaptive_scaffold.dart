@@ -43,20 +43,12 @@ class AdaptiveScaffoldDestination {
   });
 }
 
-
-
 // A widget that adapts to the current display size, displaying a [Drawer],
 /// [NavigationRail], or [BottomNavigationBar]. Navigation destinations are
 /// defined in the [destinations] parameter.
 class AdaptiveNavigationScaffold extends StatelessWidget {
-
-  
-
-
-
-
-
-
+  /// My modification to support standard side sheets on the right side on desktop
+  final Widget sideSheetBody;
 
   /// See [Scaffold.appBar].
   final PreferredSizeWidget? appBar;
@@ -132,8 +124,6 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
   /// values.
   final List<AdaptiveScaffoldDestination> destinations;
 
-  
-
   /// Called when one of the [destinations] is selected.
   ///
   /// The stateful widget that creates the adaptive scaffold needs to keep
@@ -182,12 +172,12 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
     this.endDrawerEnableOpenDragGesture = true,
     required this.selectedIndex,
     required this.destinations,
-    
     this.onDestinationSelected,
     this.navigationTypeResolver,
     this.drawerHeader,
     this.fabInRail = true,
     this.includeBaseDestinationsInMenu = true,
+    required this.sideSheetBody,
   }) : super(key: key);
 
   // ignore: member-ordering-extended
@@ -230,7 +220,6 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
               title: PlatformText(destinations[i].title),
               onTap: () {
                 onDestinationSelected?.call(i);
-                
               },
             ),
         ],
@@ -238,6 +227,8 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
     );
   }
 
+  // modal side sheet here
+  // ignore: long-method
   Widget _buildBottomNavigationScaffold() {
     const int bottomNavigationOverflow = 5;
     final bottomDestinations = destinations.sublist(
@@ -257,31 +248,39 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
     }
 
     return Scaffold(
-      key: key,
-      body: body,
-      appBar: appBar,
-      drawer: drawerDestinations.isEmpty
-          ? null
-          : _defaultDrawer(drawerDestinations),
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          for (final destination in bottomDestinations)
-            NavigationDestination(
-              icon: Icon(destination.icon),
-              label: destination.title,
-              tooltip: destination.title,
-            ),
-        ],
-        selectedIndex: selectedIndex,
-        onDestinationSelected: (int index) {
-          
-        },
-        labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+        key: key,
+        body: body,
+        appBar: appBar,
+        drawer: drawerDestinations.isEmpty
+            ? null
+            : _defaultDrawer(drawerDestinations),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            for (final destination in bottomDestinations)
+              NavigationDestination(
+                icon: Icon(destination.icon),
+                label: destination.title,
+                tooltip: destination.title,
+              ),
+          ],
+          selectedIndex: selectedIndex,
+          onDestinationSelected: (int index) {},
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+        ),
+        floatingActionButton: floatingActionButton,
+        endDrawer: Drawer(
+        child: Column(
+          children: [
+            drawerHeader as Widget,
+            sideSheetBody,
+          ],
+        ),
       ),
-      floatingActionButton: floatingActionButton,
+    
     );
   }
 
+  // modal side sheet here
   // ignore: long-method
   Widget _buildNavigationRailScaffold() {
     const int railDestinationsOverflow = 7;
@@ -302,53 +301,60 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
     }
 
     return Scaffold(
-      key: key,
-      appBar: appBar,
-      drawer: drawerDestinations.isEmpty
-          ? null
-          : _defaultDrawer(drawerDestinations),
-      body: Row(
-        children: [
-          NavigationRail(
-            leading: fabInRail ? floatingActionButton : null,
-            destinations: [
-              for (final destination in railDestinations)
-                NavigationRailDestination(
-                  icon: Icon(destination.icon),
-                  label: PlatformText(destination.title),
-                ),
-            ],
-            selectedIndex: selectedIndex,
-            onDestinationSelected: onDestinationSelected ?? (_) {
-              
-            },
-          ),
-          const VerticalDivider(
-            width: 1,
-            thickness: 1,
-          ),
-          Expanded(
-            child: body,
-          ),
-        ],
+        key: key,
+        appBar: appBar,
+        drawer: drawerDestinations.isEmpty
+            ? null
+            : _defaultDrawer(drawerDestinations),
+        body: Row(
+          children: [
+            NavigationRail(
+              leading: fabInRail ? floatingActionButton : null,
+              destinations: [
+                for (final destination in railDestinations)
+                  NavigationRailDestination(
+                    icon: Icon(destination.icon),
+                    label: PlatformText(destination.title),
+                  ),
+              ],
+              selectedIndex: selectedIndex,
+              onDestinationSelected: onDestinationSelected ?? (_) {},
+            ),
+            const VerticalDivider(
+              width: 1,
+              thickness: 1,
+            ),
+            Expanded(
+              child: body,
+            ),
+          ],
+        ),
+        floatingActionButton: fabInRail ? null : floatingActionButton,
+        floatingActionButtonLocation: floatingActionButtonLocation,
+        floatingActionButtonAnimator: floatingActionButtonAnimator,
+        persistentFooterButtons: persistentFooterButtons,
+        endDrawer: Drawer(
+        child: Column(
+          children: [
+            drawerHeader as Widget,
+            sideSheetBody,
+          ],
+        ),
       ),
-      floatingActionButton: fabInRail ? null : floatingActionButton,
-      floatingActionButtonLocation: floatingActionButtonLocation,
-      floatingActionButtonAnimator: floatingActionButtonAnimator,
-      persistentFooterButtons: persistentFooterButtons,
-      endDrawer: endDrawer,
-      bottomSheet: bottomSheet,
-      backgroundColor: backgroundColor,
-      resizeToAvoidBottomInset: resizeToAvoidBottomInset,
-      // ignore: avoid_redundant_argument_values
-      primary: true,
-      drawerDragStartBehavior: drawerDragStartBehavior,
-      extendBody: extendBody,
-      extendBodyBehindAppBar: extendBodyBehindAppBar,
-      drawerScrimColor: drawerScrimColor,
-      drawerEdgeDragWidth: drawerEdgeDragWidth,
-      drawerEnableOpenDragGesture: drawerEnableOpenDragGesture,
-      endDrawerEnableOpenDragGesture: endDrawerEnableOpenDragGesture,
+        bottomSheet: bottomSheet,
+        backgroundColor: backgroundColor,
+        resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+        // ignore: avoid_redundant_argument_values
+        primary: true,
+        drawerDragStartBehavior: drawerDragStartBehavior,
+        extendBody: extendBody,
+        extendBodyBehindAppBar: extendBodyBehindAppBar,
+        drawerScrimColor: drawerScrimColor,
+        drawerEdgeDragWidth: drawerEdgeDragWidth,
+        drawerEnableOpenDragGesture: drawerEnableOpenDragGesture,
+        endDrawerEnableOpenDragGesture: endDrawerEnableOpenDragGesture,
+        
+    
     );
   }
 
@@ -398,6 +404,8 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
     );
   }
 
+  // standard side sheet goes here as last item of the row
+  // ignore: long-method
   Widget _buildPermanentDrawerScaffold() {
     return Row(
       children: [
@@ -416,6 +424,7 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
             ],
           ),
         ),
+
         const VerticalDivider(
           width: 1,
           thickness: 1,
@@ -444,6 +453,23 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
             endDrawerEnableOpenDragGesture: endDrawerEnableOpenDragGesture,
           ),
         ),
+        // standard side sheet, borrowed layout idead from modal side sheets package
+        //  https://github.com/lalitjarwal/modal_side_sheet/blob/master/lib/src/body_with_side_sheet.dart
+        //
+        // This is the left border of standard side sheet
+        const VerticalDivider(
+          width: 1,
+          thickness: 1,
+        ),
+        Drawer(
+          child: Column(
+            children: [
+              // TODO: Find a better way to write `drawerHeader!`
+              if (drawerHeader != null) drawerHeader!,
+              sideSheetBody,
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -452,10 +478,7 @@ class AdaptiveNavigationScaffold extends StatelessWidget {
     final index = destinations.indexOf(destination);
     if (index != selectedIndex) {
       onDestinationSelected?.call(index);
-     
-    } else{
-      
-    }
+    } else {}
   }
 }
 

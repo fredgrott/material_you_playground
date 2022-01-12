@@ -2,15 +2,17 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+import 'dart:io';
+
+import 'package:adaptive_breakpoints/adaptive_breakpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:modal_demo/src/data/sample_item.dart';
 import 'package:modal_demo/src/presentation/features/home/all_destinations.dart';
-
-
+import 'package:modal_demo/src/presentation/features/home/standard_side_sheet.dart';
 import 'package:modal_demo/src/presentation/themes/app_themedata_ext.dart';
 import 'package:modal_demo/src/presentation/widgets/app_adaptive_appbar.dart';
 import 'package:modal_demo/src/presentation/widgets/app_adaptive_scaffold.dart';
-
 
 class DefaultScaffoldDemo extends StatefulWidget {
   const DefaultScaffoldDemo({Key? key}) : super(key: key);
@@ -22,6 +24,12 @@ class DefaultScaffoldDemo extends StatefulWidget {
 class _DefaultScaffoldDemoState extends State<DefaultScaffoldDemo> {
   bool showDiscovery = false;
   int count = 0;
+  final List<SampleItem> items = const [
+    SampleItem(1),
+    SampleItem(2),
+    SampleItem(3),
+  ];
+
   final int _destinationCount = 5;
   final bool _fabInRail = false;
   final bool _includeBaseDestinationsInMenu = true;
@@ -39,6 +47,31 @@ class _DefaultScaffoldDemoState extends State<DefaultScaffoldDemo> {
       // })
       // }
       //onDestinationSelected: ,
+
+      
+      
+
+      drawerHeader: DrawerHeader(
+        // ignore: use_named_constants
+        margin: const EdgeInsets.all(0.0),
+
+        // ignore: use_named_constants
+        padding: const EdgeInsets.fromLTRB(
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+        ),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/grott_studios.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Container(),
+      ),
+
+      sideSheetBody: const StandardSideSheet(),
       selectedIndex: 0,
       destinations: allDestinations.sublist(
         0,
@@ -49,40 +82,53 @@ class _DefaultScaffoldDemoState extends State<DefaultScaffoldDemo> {
       ),
       body: _body(),
       //floatingActionButton: FloatingActionButton(
-        //onPressed: _increment,
-       // child: const Icon(Icons.add),
+      //onPressed: _increment,
+      // child: const Icon(Icons.add),
       //),
       fabInRail: _fabInRail,
       includeBaseDestinationsInMenu: _includeBaseDestinationsInMenu,
     );
   }
 
-  
-
+  // ignore: long-method
   Widget _body() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        // ignore: avoid_redundant_argument_values
-        mainAxisSize: MainAxisSize.max,
-        // ignore: avoid_redundant_argument_values
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ElevatedButton(
-            onPressed: () {},
-            child: Text(
-              'Press Me',
-              style: platformThemeData(
-                context,
-                material: (data) => data.textTheme.labelLarge,
-                cupertino: (data) => data.ownText()?.appLabelLarge,
+    return Card(
+      color: platformThemeData(
+        context,
+        material: (data) => data.colorScheme.secondaryContainer,
+        cupertino: (data) => data.ownColor()?.appSecondaryContainer,
+      ),
+      child: ListView.builder(
+        restorationId: 'sampleItemListView',
+        itemBuilder: (
+          BuildContext context,
+          int index,
+        ) {
+          final item = items[index];
+
+          return ListTile(
+              title: Text(
+                'SampleItem ${item.id}',
+                style: platformThemeData(
+                  context,
+                  material: (data) => data.textTheme.labelLarge,
+                  cupertino: (data) => data.ownText()?.appLabelLarge,
+                ),
               ),
-            ),
-          ),
-          
-        ],
+              leading: const CircleAvatar(
+                // Display the Flutter Logo image asset.
+                foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+              ),
+              onTap: () {},
+            
+          );
+        },
+        itemCount: items.length,
       ),
     );
   }
+
+  
 }
+
 

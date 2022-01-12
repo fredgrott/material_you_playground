@@ -24,6 +24,7 @@
 // Implementation Note: Since I use Flutter Portal I cannot set CardTheme in
 // ThemeData and have to set theme for cards by card.
 
+
 import 'package:flutter/material.dart';
 import 'package:modal_demo/src/infrastrucutre/app_vars.dart';
 import 'package:modal_demo/src/presentation/themes/app_appbar_theme.dart';
@@ -52,6 +53,7 @@ import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
 import 'package:modal_demo/src/presentation/themes/app_theme_data_defaults.dart';
 import 'package:modal_demo/src/presentation/themes/app_typography.dart';
 import 'package:modal_demo/src/presentation/themes/splash/wave_splash.dart';
+
 
 
 
@@ -221,10 +223,10 @@ ThemeData appMaterialDarkThemeData = ThemeData(
     cardTheme: appMaterialDarkCardTheme,
     bannerTheme: appMaterialDarkBannerThemeData,
     textButtonTheme: appMaterialDarkTextButtonThemeData,
-    snackBarTheme: appMaterialLightSnackBarThemeData,
-    outlinedButtonTheme: appMaterialLightOutlinedButtonThemeData,
-    chipTheme: appMaterialLightChipThemeData,
-    dividerTheme: appMaterialLightDividerThemeData,
+    snackBarTheme: appMaterialDarkSnackBarThemeData,
+    outlinedButtonTheme: appMaterialDarkOutlinedButtonThemeData,
+    chipTheme: appMaterialDarkChipThemeData,
+    dividerTheme: appMaterialDarkDividerThemeData,
     sliderTheme: appMaterialDarkSliderThemeData,
     tabBarTheme: appMaterialDarkTabBarTheme,
     bottomSheetTheme: appMaterialDarkBottomSheetThemeData,

@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+
 import 'package:flutter/material.dart';
 import 'package:modal_demo/src/presentation/themes/app_icon_theme.dart';
-import 'package:modal_demo/src/presentation/themes/app_squircle.dart';
+
 import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
-import 'package:modal_demo/src/presentation/themes/app_theme_data_defaults.dart';
 
 
-
+// Gist: top appbar under MD3 has 0dp corners
 
 
 
@@ -24,11 +24,7 @@ AppBarTheme appMaterialLightAppBarTheme = AppBarTheme(
   actionsIconTheme: appMaterialLightIconThemeData,
   centerTitle: true,
   titleTextStyle: const TextStyle(fontWeight: FontWeight.bold),
-  shape: SquircleBorder(
-    radius: BorderRadius.all(
-      Radius.circular(widgetRadius),
-    ),
-  ),
+  
 );
 
 AppBarTheme appMaterialDarkAppBarTheme = AppBarTheme(
@@ -41,10 +37,6 @@ AppBarTheme appMaterialDarkAppBarTheme = AppBarTheme(
   actionsIconTheme: appMaterialDarkIconThemeData,
   centerTitle: true,
   titleTextStyle: const TextStyle(fontWeight: FontWeight.bold),
-  shape: SquircleBorder(
-    radius: BorderRadius.all(
-      Radius.circular(widgetRadius),
-    ),
-  ),
+  
 );
 

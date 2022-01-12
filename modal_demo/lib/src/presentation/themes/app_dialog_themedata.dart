@@ -2,22 +2,20 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:modal_demo/src/presentation/themes/app_squircle.dart';
+
 import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
 import 'package:modal_demo/src/presentation/themes/app_theme_data_defaults.dart';
 
+// Gist: MD3 0dp corners
 
 DialogTheme appMaterialLightDialogTheme = DialogTheme(
   backgroundColor: appMaterialLightColorScheme.surfaceVariant,
   elevation: elevationTwo,
   alignment: Alignment.centerLeft,
-  shape: const SquircleBorder(
-    radius: BorderRadius.all(
-      Radius.circular(12.0),
-    ),
-  ),
+  
   titleTextStyle: appMaterialLightDialogTitleTextStyle,
   contentTextStyle: appMaterialLightDialogContentTextStyle,
 );
@@ -26,11 +24,7 @@ DialogTheme appMaterialDarkDialogTheme = DialogTheme(
   backgroundColor: appMaterialDarkColorScheme.surfaceVariant,
   elevation: elevationTwo,
   alignment: Alignment.centerLeft,
-  shape: const SquircleBorder(
-    radius: BorderRadius.all(
-      Radius.circular(12.0),
-    ),
-  ),
+  
   titleTextStyle: appMaterialDarkDialogTitleTextStyle,
   contentTextStyle: appMaterialDarkDialogContentTextStyle,
 );

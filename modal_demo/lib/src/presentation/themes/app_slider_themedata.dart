@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:modal_demo/src/presentation/themes/app_theme_colors.dart';
 
 
+
 SliderThemeData appMaterialLightSliderThemeData = SliderThemeData(
   trackHeight: 2.0,
   activeTickMarkColor: appMaterialLightColorScheme.primaryContainer,
