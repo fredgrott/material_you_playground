@@ -1,0 +1,6 @@
+{
+  "appTitle": "master_detail",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

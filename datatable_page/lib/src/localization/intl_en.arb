@@ -1,0 +1,6 @@
+{
+  "appTitle": "datatable_page",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
