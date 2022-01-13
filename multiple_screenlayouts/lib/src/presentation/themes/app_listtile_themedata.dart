@@ -2,11 +2,14 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+
 import 'package:flutter/material.dart';
+import 'package:multiple_screenlayouts/src/presentation/themes/app_squircle.dart';
 import 'package:multiple_screenlayouts/src/presentation/themes/app_theme_colors.dart';
+import 'package:multiple_screenlayouts/src/presentation/themes/app_theme_data_defaults.dart';
 
 
-// Gist: temp fix until it's migrated to MD3 is to set icon and text 
+// Gist: temp fix until it's migrated to MD3 is to set icon and text
 //        colors to inverseSurface
 
 ListTileThemeData appMaterialLightListTileThemeData = ListTileThemeData(
@@ -15,12 +18,16 @@ ListTileThemeData appMaterialLightListTileThemeData = ListTileThemeData(
   selectedColor: appMaterialLightColorScheme.secondary,
   iconColor: appMaterialLightColorScheme.inverseSurface,
   textColor: appMaterialLightColorScheme.inverseSurface,
-  contentPadding: EdgeInsetsGeometry.infinity,
+  contentPadding: const EdgeInsets.all(8),
   tileColor: appMaterialLightColorScheme.surfaceVariant,
-  selectedTileColor: appMaterialLightColorScheme.primary,
+  selectedTileColor: appMaterialLightColorScheme.primary.withOpacity(0.28),
   minLeadingWidth: 4,
   enableFeedback: true,
-  
+  shape: SquircleBorder(
+    radius: BorderRadius.all(
+      Radius.circular(widgetRadius),
+    ),
+  ),
 );
 
 ListTileThemeData appMaterialDarkListTileThemeData = ListTileThemeData(
@@ -29,10 +36,14 @@ ListTileThemeData appMaterialDarkListTileThemeData = ListTileThemeData(
   selectedColor: appMaterialDarkColorScheme.secondary,
   iconColor: appMaterialDarkColorScheme.inverseSurface,
   textColor: appMaterialDarkColorScheme.inverseSurface,
-  contentPadding: EdgeInsetsGeometry.infinity,
+  contentPadding: const EdgeInsets.all(8),
   tileColor: appMaterialDarkColorScheme.surfaceVariant,
-  selectedTileColor: appMaterialDarkColorScheme.primary,
+  selectedTileColor: appMaterialDarkColorScheme.primary.withOpacity(0.28),
   minLeadingWidth: 4,
   enableFeedback: true,
+  shape: SquircleBorder(
+    radius: BorderRadius.all(
+      Radius.circular(widgetRadius),
+    ),
+  ),
 );
-

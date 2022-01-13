@@ -2,9 +2,14 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+
 import 'package:flutter/material.dart';
 import 'package:multiple_screenlayouts/src/presentation/themes/app_icon_theme.dart';
 import 'package:multiple_screenlayouts/src/presentation/themes/app_theme_colors.dart';
+
+
+
+// Gist: top appbar under MD3 has 0dp corners
 
 
 
@@ -19,6 +24,7 @@ AppBarTheme appMaterialLightAppBarTheme = AppBarTheme(
   actionsIconTheme: appMaterialLightIconThemeData,
   centerTitle: true,
   titleTextStyle: const TextStyle(fontWeight: FontWeight.bold),
+  
 );
 
 AppBarTheme appMaterialDarkAppBarTheme = AppBarTheme(
@@ -31,5 +37,6 @@ AppBarTheme appMaterialDarkAppBarTheme = AppBarTheme(
   actionsIconTheme: appMaterialDarkIconThemeData,
   centerTitle: true,
   titleTextStyle: const TextStyle(fontWeight: FontWeight.bold),
+  
 );
 

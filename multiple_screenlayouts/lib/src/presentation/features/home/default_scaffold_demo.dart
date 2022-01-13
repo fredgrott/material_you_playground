@@ -2,11 +2,14 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:multi_screen_layout/multi_screen_layout.dart';
-import 'package:multiple_screenlayouts/src/presentation/features/home/main%20_page.dart';
-import 'package:multiple_screenlayouts/src/presentation/features/home/second_page.dart';
+import 'package:multiple_screenlayouts/src/data/sample_item.dart';
+import 'package:multiple_screenlayouts/src/presentation/features/home/all_destinations.dart';
+import 'package:multiple_screenlayouts/src/presentation/features/home/standard_side_sheet.dart';
+
+import 'package:multiple_screenlayouts/src/presentation/themes/app_themedata_ext.dart';
 import 'package:multiple_screenlayouts/src/presentation/widgets/app_adaptive_appbar.dart';
 import 'package:multiple_screenlayouts/src/presentation/widgets/app_adaptive_scaffold.dart';
 
@@ -19,46 +22,113 @@ class DefaultScaffoldDemo extends StatefulWidget {
 }
 
 class _DefaultScaffoldDemoState extends State<DefaultScaffoldDemo> {
-  int _destinationCount = 5;
-  bool _fabInRail = false;
-  bool _includeBaseDestinationsInMenu = true;
+  bool showDiscovery = false;
+  int count = 0;
+  final List<SampleItem> items = const [
+    SampleItem(1),
+    SampleItem(2),
+    SampleItem(3),
+  ];
+
+  final int _destinationCount = 5;
+  final bool _fabInRail = false;
+  final bool _includeBaseDestinationsInMenu = true;
 
   @override
   Widget build(BuildContext context) {
     return AdaptiveNavigationScaffold(
-      selectedIndex: 0,
-      destinations: _allDestinations.sublist(0, _destinationCount,),
-      appBar: AdaptiveAppBar(
-        title: PlatformText(
-          'Default Demo'),
-        
+      //  _onDestinationSelected(){
+      //      setState((){
+      //         do nav to namedRoute here
+      //         it will involve selectedIndex
+      //          used as index to namedRoutes
+      //          list use navigatorKey to go to namedRoute
+      //          without context
+      // })
+      // }
+      //onDestinationSelected: ,
+
+      
+      
+
+      drawerHeader: DrawerHeader(
+        // ignore: use_named_constants
+        margin: const EdgeInsets.all(0.0),
+
+        // ignore: use_named_constants
+        padding: const EdgeInsets.fromLTRB(
+          0.0,
+          0.0,
+          0.0,
+          0.0,
         ),
-      body: _body(),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {},
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/grott_studios.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Container(),
       ),
+
+      sideSheetBody: const StandardSideSheet(),
+      selectedIndex: 0,
+      destinations: allDestinations.sublist(
+        0,
+        _destinationCount,
+      ),
+      appBar: AdaptiveAppBar(
+        title: PlatformText('Default Demo'),
+      ),
+      body: _body(),
+      //floatingActionButton: FloatingActionButton(
+      //onPressed: _increment,
+      // child: const Icon(Icons.add),
+      //),
       fabInRail: _fabInRail,
       includeBaseDestinationsInMenu: _includeBaseDestinationsInMenu,
     );
   }
 
+  // ignore: long-method
   Widget _body() {
-    return TwoPageLayout(
-      child: MainPage(),
-      secondChild: SecondPage(),
+    return Card(
+      color: platformThemeData(
+        context,
+        material: (data) => data.colorScheme.secondaryContainer,
+        cupertino: (data) => data.ownColor()?.appSecondaryContainer,
+      ),
+      child: ListView.builder(
+        restorationId: 'sampleItemListView',
+        itemBuilder: (
+          BuildContext context,
+          int index,
+        ) {
+          final item = items[index];
+
+          return ListTile(
+              title: Text(
+                'SampleItem ${item.id}',
+                style: platformThemeData(
+                  context,
+                  material: (data) => data.textTheme.labelLarge,
+                  cupertino: (data) => data.ownText()?.appLabelLarge,
+                ),
+              ),
+              leading: const CircleAvatar(
+                // Display the Flutter Logo image asset.
+                foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+              ),
+              onTap: () {},
+            
+          );
+        },
+        itemCount: items.length,
+      ),
     );
   }
+
+  
 }
 
-const _allDestinations = [
-  AdaptiveScaffoldDestination(title: 'ALARM', icon: Icons.alarm,),
-  AdaptiveScaffoldDestination(title: 'BOOK', icon: Icons.book,),
-  AdaptiveScaffoldDestination(title: 'CAKE', icon: Icons.cake,),
-  AdaptiveScaffoldDestination(title: 'DIRECTIONS', icon: Icons.directions,),
-  AdaptiveScaffoldDestination(title: 'EMAIL', icon: Icons.email,),
-  AdaptiveScaffoldDestination(title: 'FAVORITE', icon: Icons.favorite,),
-  AdaptiveScaffoldDestination(title: 'GROUP', icon: Icons.group,),
-  AdaptiveScaffoldDestination(title: 'HEADSET', icon: Icons.headset,),
-  AdaptiveScaffoldDestination(title: 'INFO', icon: Icons.info,),
-];
+

@@ -9,9 +9,19 @@ import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:multiple_screenlayouts/src/infrastrucutre/app_vars.dart';
 import 'package:multiple_screenlayouts/src/infrastrucutre/app_widget_keys.dart';
 
+
+
+
+
+
 import 'package:multiple_screenlayouts/src/localization_gen/l10n.dart';
 import 'package:multiple_screenlayouts/src/presentation/features/home/default_scaffold_demo.dart';
-import 'package:multiple_screenlayouts/src/presentation/themes/app_themedata.dart';
+
+
+
+
+import 'presentation/themes/app_themedata.dart';
+
 
 
 // I name it platformmyapp so as clue in devs that is the root widget where 
@@ -29,9 +39,10 @@ class PlatformMyApp extends StatelessWidget {
         settings: PlatformSettingsData(iosUsesMaterialWidgets: true),
         builder: (context) => PlatformApp(
           widgetKey: appKey,
+          
           debugShowCheckedModeBanner: false,
 
-          // not yet as this requires onGenerateRoute
+          // so we can do navigation without context
           navigatorKey: navigatorKey,
           restorationScopeId: 'app',
           localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
@@ -70,6 +81,8 @@ class PlatformMyApp extends StatelessWidget {
           ),
           home: const DefaultScaffoldDemo(),
         ),
+        
+        
       ),
     );
   }

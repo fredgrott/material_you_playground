@@ -1,0 +1,6 @@
+{
+  "appTitle": "layout_errors",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
